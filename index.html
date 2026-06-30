@@ -743,7 +743,7 @@
             font-weight: 500;
         }
 
-        /* ===== SKILLS SECTION ===== */
+        /* ===== SKILLS ===== */
         #skills {
             background: linear-gradient(180deg, rgba(102, 126, 234, 0.03), transparent);
         }
@@ -803,7 +803,7 @@
             width: var(--level);
         }
 
-        /* ===== PROJECTS SECTION ===== */
+        /* ===== PROJECTS ===== */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -1269,43 +1269,10 @@
             color: #667eea;
         }
 
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 16px 22px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 14px;
-            color: #fff;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            margin-bottom: 16px;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 30px rgba(102, 126, 234, 0.05);
-            transform: scale(1.01);
-        }
-
-        .contact-form textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
-
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: #8080a0;
-        }
-
-        .contact-form .btn {
-            border: none;
-            cursor: pointer;
-            width: 100%;
+        .contact-item .asterisk-phone {
+            letter-spacing: 2px;
+            font-family: monospace;
+            font-size: 1.1rem;
         }
 
         /* ===== FOOTER ===== */
@@ -1589,7 +1556,9 @@
 
             <div class="hero-image slide-center-right">
                 <div class="profile-wrapper">
-                    <img src="./images/alexa.png" alt="Alexa Reyes" class="profile-img">
+                    <!-- ===== PROFILE PICTURE ===== -->
+                    <!-- Place your image in: ./images/alexa.jpg -->
+                    <img src="./images/alexa.jpg" alt="Alexa Reyes" class="profile-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:8rem;text-align:center;line-height:1;\'>🎨</div>';">
                 </div>
             </div>
         </div>
@@ -1836,7 +1805,7 @@
 
                 <div class="contact-item slide-center" style="transition-delay: 0.25s;">
                     <div class="icon">📱</div>
-                    <span><a href="tel:+639123456789">+63 912 3456 789</a></span>
+                    <span class="asterisk-phone">+63 9** **** ***</span>
                 </div>
 
                 <div class="contact-item slide-center" style="transition-delay: 0.3s;">
@@ -1850,13 +1819,9 @@
                 </div>
             </div>
 
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required class="slide-center-right">
-                <input type="email" placeholder="Your Email" required class="slide-center-right" style="transition-delay: 0.1s;">
-                <input type="text" placeholder="Subject" class="slide-center-right" style="transition-delay: 0.2s;">
-                <textarea placeholder="Tell me about your project..." required class="slide-center-right" style="transition-delay: 0.3s;"></textarea>
-                <button type="submit" class="btn btn-primary slide-center-right" style="transition-delay: 0.4s;">Send Message</button>
-            </form>
+            <!-- ===== CONTACT FORM REMOVED ===== -->
+            <!-- No form — this is a static portfolio only -->
+
         </div>
     </section>
 
