@@ -1864,14 +1864,15 @@
             </a>
 
             <!-- ===== PROJECT 2 ===== -->
-            <a href="#" class="project-card">
+            <a href="#" class="project-card" onclick="openGallery('socialMedia'); return false;">
                 <div class="project-image-wrapper">
-                    <img src="./images/design1.png" alt="Design Project 1" class="stacked-image" onerror="this.style.display='none'">
-                    <img src="./images/design2.png" alt="Design Project 2" class="stacked-image" onerror="this.style.display='none'">
+                    <img src="./images/design1.jpg" alt="Social Media Campaign 1" class="stacked-image" onerror="this.style.display='none'">
+                    <img src="./images/design2.jpg" alt="Social Media Campaign 2" class="stacked-image" onerror="this.style.display='none'">
+                    <img src="./images/design3.jpg" alt="Social Media Campaign 3" class="stacked-image" onerror="this.style.display='none'">
                     <div class="click-overlay">
                         <span class="click-text">🖼️ View Gallery</span>
                     </div>
-                    <div class="gallery-hint">
+                    <div class="gallery-hint" id="socialMedia-hint">
                         <span class="icon">🖼️</span> <span class="photo-count">3</span> photos
                     </div>
                 </div>
@@ -1885,14 +1886,14 @@
             </a>
 
             <!-- ===== PROJECT 3 ===== -->
-            <a href="#" class="project-card">
+            <a href="#" class="project-card" onclick="openGallery('uiDesign'); return false;">
                 <div class="project-image-wrapper">
-                    <img src="./images/design4.jpg" alt="UI Design Project" class="stacked-image" onerror="this.style.display='none'">
-                    <img src="./images/design5.jpg" alt="UI Design Project 2" class="stacked-image" onerror="this.style.display='none'">
+                    <img src="./images/design4.jpg" alt="UI Design 1" class="stacked-image" onerror="this.style.display='none'">
+                    <img src="./images/design5.jpg" alt="UI Design 2" class="stacked-image" onerror="this.style.display='none'">
                     <div class="click-overlay">
                         <span class="click-text">🖼️ View Gallery</span>
                     </div>
-                    <div class="gallery-hint">
+                    <div class="gallery-hint" id="uiDesign-hint">
                         <span class="icon">🖼️</span> <span class="photo-count">2</span> photos
                     </div>
                 </div>
@@ -2134,20 +2135,32 @@
 
         // ===== GALLERY DATA =====
         const galleryData = {
-            default: [
-                { src: './images/design1.jpg', alt: 'Design Project 1' },
-                { src: './images/design2.jpg', alt: 'Design Project 2' },
-                { src: './images/design3.jpg', alt: 'Design Project 3' }
+            socialMedia: [
+                { src: './images/design1.jpg', alt: 'Social Media Campaign - Post 1' },
+                { src: './images/design2.jpg', alt: 'Social Media Campaign - Post 2' },
+                { src: './images/design3.jpg', alt: 'Social Media Campaign - Post 3' }
+            ],
+            uiDesign: [
+                { src: './images/design4.jpg', alt: 'UI Design - Dashboard' },
+                { src: './images/design5.jpg', alt: 'UI Design - Mobile App' }
             ]
         };
 
-        // Update photo counts
+        // ===== UPDATE PHOTO COUNTS DYNAMICALLY =====
         document.addEventListener('DOMContentLoaded', function() {
-            const hints = document.querySelectorAll('.gallery-hint');
-            hints.forEach(hint => {
-                const countSpan = hint.querySelector('.photo-count');
-                if (countSpan) countSpan.textContent = '3';
-            });
+            // Update social media count
+            const socialHint = document.getElementById('socialMedia-hint');
+            if (socialHint) {
+                const countSpan = socialHint.querySelector('.photo-count');
+                if (countSpan) countSpan.textContent = galleryData.socialMedia.length;
+            }
+
+            // Update UI Design count
+            const uiHint = document.getElementById('uiDesign-hint');
+            if (uiHint) {
+                const countSpan = uiHint.querySelector('.photo-count');
+                if (countSpan) countSpan.textContent = galleryData.uiDesign.length;
+            }
         });
 
         let currentGallery = [];
@@ -2155,7 +2168,7 @@
 
         function openGallery(galleryName) {
             const modal = document.getElementById('galleryModal');
-            currentGallery = galleryData[galleryName] || galleryData.default;
+            currentGallery = galleryData[galleryName] || galleryData.socialMedia;
             currentImageIndex = 0;
             modal.classList.add('active');
             updateGallery();
