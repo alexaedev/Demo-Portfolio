@@ -383,16 +383,11 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            cursor: none !important;
         }
 
         .gallery-modal.active {
             display: flex;
             animation: fadeIn 0.3s ease;
-        }
-
-        .gallery-modal * {
-            cursor: none !important;
         }
 
         .gallery-modal .close-btn {
@@ -1810,7 +1805,7 @@
             }
         }
 
-        /* ===== DEMO POPUP ===== */
+        /* ===== DEMO POPUP - FIXED CURSOR ===== */
         .demo-popup {
             display: none;
             position: fixed;
@@ -1824,6 +1819,7 @@
             justify-content: center;
             align-items: center;
             animation: fadeIn 0.3s ease;
+            cursor: auto !important;
         }
 
         .demo-popup.active {
@@ -1831,7 +1827,7 @@
         }
 
         .demo-popup * {
-            cursor: none !important;
+            cursor: auto !important;
         }
 
         .demo-popup-content {
@@ -1883,7 +1879,7 @@
             border: none;
             font-weight: 600;
             font-size: 0.95rem;
-            cursor: none !important;
+            cursor: pointer !important;
             transition: all 0.3s ease;
         }
 
@@ -1958,10 +1954,12 @@
                 }
             }
 
-            /* Ensure cursor is visible over all overlays */
-            .gallery-modal,
-            .demo-popup {
-                cursor: none !important;
+            /* Gallery modal - show default cursor */
+            .gallery-modal {
+                cursor: auto !important;
+            }
+            .gallery-modal * {
+                cursor: auto !important;
             }
         }
 
@@ -1973,12 +1971,10 @@
             body {
                 cursor: auto;
             }
-            .gallery-modal,
-            .demo-popup {
+            .gallery-modal {
                 cursor: auto !important;
             }
-            .gallery-modal *,
-            .demo-popup * {
+            .gallery-modal * {
                 cursor: auto !important;
             }
         }
