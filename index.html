@@ -383,7 +383,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            cursor: default !important;
+            cursor: none !important;
         }
 
         .gallery-modal.active {
@@ -391,20 +391,8 @@
             animation: fadeIn 0.3s ease;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .gallery-modal,
         .gallery-modal * {
-            cursor: default !important;
+            cursor: none !important;
         }
 
         .gallery-modal .close-btn {
@@ -413,7 +401,6 @@
             right: 40px;
             font-size: 2.5rem;
             color: rgba(255, 255, 255, 0.7);
-            cursor: pointer !important;
             transition: all 0.3s ease;
             z-index: 10001;
             background: rgba(255, 255, 255, 0.05);
@@ -465,7 +452,6 @@
             color: rgba(255, 255, 255, 0.8);
             font-size: 1.8rem;
             padding: 15px 20px;
-            cursor: pointer !important;
             border-radius: 50%;
             transition: all 0.3s ease;
             backdrop-filter: blur(15px);
@@ -526,7 +512,6 @@
             height: 60px;
             object-fit: cover;
             border-radius: 10px;
-            cursor: pointer !important;
             border: 2px solid transparent;
             transition: all 0.3s ease;
             opacity: 0.5;
@@ -557,7 +542,6 @@
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
-            cursor: pointer !important;
         }
 
         .gallery-modal .progress-dots .dot.active {
@@ -1772,6 +1756,13 @@
             .cert-grid {
                 grid-template-columns: 1fr 1fr;
             }
+            .airplane-cursor,
+            .trail-container {
+                display: none;
+            }
+            body {
+                cursor: auto;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1839,6 +1830,10 @@
             display: flex;
         }
 
+        .demo-popup * {
+            cursor: none !important;
+        }
+
         .demo-popup-content {
             background: #1a1a2e;
             border: 1px solid rgba(102, 126, 234, 0.15);
@@ -1888,7 +1883,7 @@
             border: none;
             font-weight: 600;
             font-size: 0.95rem;
-            cursor: pointer;
+            cursor: none !important;
             transition: all 0.3s ease;
         }
 
@@ -1900,14 +1895,14 @@
         /* ===== AIRPLANE CURSOR (desktop only) ===== */
         @media (min-width: 769px) {
             body {
-                cursor: none;
+                cursor: none !important;
             }
 
             .airplane-cursor {
                 position: fixed;
                 font-size: 24px;
                 pointer-events: none;
-                z-index: 10000;
+                z-index: 999999;
                 transform: translate(-50%, -50%);
                 transition: transform 0.1s ease;
                 filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.5));
@@ -1940,7 +1935,7 @@
                 width: 100%;
                 height: 100%;
                 pointer-events: none;
-                z-index: 9999;
+                z-index: 99998;
                 overflow: hidden;
             }
 
@@ -1962,6 +1957,12 @@
                     transform: scale(0) translate(var(--tx), var(--ty));
                 }
             }
+
+            /* Ensure cursor is visible over all overlays */
+            .gallery-modal,
+            .demo-popup {
+                cursor: none !important;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1971,6 +1972,14 @@
             }
             body {
                 cursor: auto;
+            }
+            .gallery-modal,
+            .demo-popup {
+                cursor: auto !important;
+            }
+            .gallery-modal *,
+            .demo-popup * {
+                cursor: auto !important;
             }
         }
     </style>
@@ -2714,13 +2723,15 @@
                 createTrail(mouseX, mouseY);
             });
 
-            document.querySelectorAll('a, button, .btn, .project-card, .skill-card, .stat, .contact-item, .logo, .exp-card, .cert-card, .stat-visual-card').forEach(el => {
-                el.addEventListener('mouseenter', function() {
-                    airplaneCursor.classList.add('hover');
-                });
-                el.addEventListener('mouseleave', function() {
-                    airplaneCursor.classList.remove('hover');
-                });
+            document.querySelectorAll('a, button, .btn, .project-card, .skill-card, .stat, .contact-item, .logo, .exp-card, .cert-card, .stat-visual-card, .close-btn, .nav-btn, .popup-btn, .demo-popup-content, .gallery-modal').forEach(el => {
+                if (el) {
+                    el.addEventListener('mouseenter', function() {
+                        airplaneCursor.classList.add('hover');
+                    });
+                    el.addEventListener('mouseleave', function() {
+                        airplaneCursor.classList.remove('hover');
+                    });
+                }
             });
         }
 
