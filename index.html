@@ -12,6 +12,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700,800" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
         /* ----- RESET & BASE ----- */
@@ -92,7 +93,6 @@
             display: block;
         }
 
-        /* ===== PROGRESS BAR FOR SKILLS IN STATS ===== */
         .stat-bar-wrapper {
             margin-top: 12px;
             height: 6px;
@@ -1447,6 +1447,33 @@
             box-shadow: 0 8px 30px rgba(102, 126, 234, 0.05);
         }
 
+        .exp-card .click-label {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 0.7rem;
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+            padding: 4px 14px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .exp-card .click-label i {
+            font-size: 0.6rem;
+        }
+
+        .exp-card:hover .click-label {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.3);
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.1);
+        }
+
         .exp-icon {
             font-size: 2.8rem;
             flex-shrink: 0;
@@ -1529,6 +1556,32 @@
             box-shadow: 0 8px 30px rgba(102, 126, 234, 0.05);
         }
 
+        .cert-card .click-label {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            font-size: 0.6rem;
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.08);
+            padding: 2px 10px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            border: 1px solid rgba(102, 126, 234, 0.06);
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+
+        .cert-card .click-label i {
+            font-size: 0.5rem;
+        }
+
+        .cert-card:hover .click-label {
+            background: rgba(102, 126, 234, 0.15);
+            border-color: rgba(102, 126, 234, 0.2);
+        }
+
         .cert-icon {
             font-size: 2.6rem;
             margin-bottom: 8px;
@@ -1565,10 +1618,10 @@
                 width: 300px;
                 height: 300px;
             }
-            .exp-card .click-hint {
+            .exp-card .click-label {
                 display: none;
             }
-            .cert-card .click-hint {
+            .cert-card .click-label {
                 display: none;
             }
         }
@@ -2077,6 +2130,7 @@
 
         <div class="experience-timeline stagger-children">
             <div class="exp-card" onclick="showDemoPopup()">
+                <span class="click-label"><i class="fas fa-arrow-right"></i> Click to view</span>
                 <div class="exp-icon">🏢</div>
                 <div class="exp-content">
                     <h3>Creative Lead &amp; Graphic Designer</h3>
@@ -2094,6 +2148,7 @@
             </div>
 
             <div class="exp-card" onclick="showDemoPopup()">
+                <span class="click-label"><i class="fas fa-arrow-right"></i> Click to view</span>
                 <div class="exp-icon">📱</div>
                 <div class="exp-content">
                     <h3>UI/UX Designer &amp; Project Coordinator</h3>
@@ -2277,21 +2332,25 @@
 
         <div class="cert-grid stagger-children">
             <div class="cert-card" onclick="showDemoPopup()">
+                <span class="click-label"><i class="fas fa-arrow-right"></i> View</span>
                 <div class="cert-icon">📜</div>
                 <div class="cert-name">Adobe Certified Professional</div>
                 <div class="cert-issuer">Adobe — 2024</div>
             </div>
             <div class="cert-card" onclick="showDemoPopup()">
+                <span class="click-label"><i class="fas fa-arrow-right"></i> View</span>
                 <div class="cert-icon">🎯</div>
                 <div class="cert-name">UI/UX Design Fundamentals</div>
                 <div class="cert-issuer">Google — 2023</div>
             </div>
             <div class="cert-card" onclick="showDemoPopup()">
+                <span class="click-label"><i class="fas fa-arrow-right"></i> View</span>
                 <div class="cert-icon">🎨</div>
                 <div class="cert-name">Brand Strategy &amp; Identity</div>
                 <div class="cert-issuer">Coursera — 2023</div>
             </div>
             <div class="cert-card" onclick="showDemoPopup()">
+                <span class="click-label"><i class="fas fa-arrow-right"></i> View</span>
                 <div class="cert-icon">📱</div>
                 <div class="cert-name">Figma Masterclass</div>
                 <div class="cert-issuer">DesignLab — 2022</div>
@@ -2544,7 +2603,6 @@
                 if (countSpan) countSpan.textContent = galleryData.uiDesign.length;
             }
 
-            // Trigger stagger animations
             document.querySelectorAll('.stagger-children').forEach(el => {
                 el.classList.add('visible');
             });
@@ -2739,7 +2797,6 @@
                 observer.observe(el);
             });
 
-            // Also observe stat cards for bar animation
             document.querySelectorAll('.stat-visual-card').forEach(card => {
                 const bar = card.querySelector('.stat-bar-fill');
                 if (bar) {
