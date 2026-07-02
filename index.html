@@ -31,7 +31,7 @@
             background: #0a0a1a;
             color: #ffffff;
             overflow-x: hidden;
-            cursor: auto;
+            cursor: none;
         }
 
         /* ===== BACKGROUND PARTICLES ===== */
@@ -45,6 +45,68 @@
             pointer-events: none;
             opacity: 0.35;
         }
+
+        /* ===== CENTER SLIDE ANIMATIONS (from Paul David portfolio) ===== */
+        .slide-center {
+            opacity: 0;
+            transform: translateX(-60px) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-center.visible {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+
+        .slide-center-right {
+            opacity: 0;
+            transform: translateX(60px) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-center-right.visible {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+
+        .slide-center-up {
+            opacity: 0;
+            transform: translateY(50px) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-center-up.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Stagger children - slide from center (matching Paul David) */
+        .stagger-center > * {
+            opacity: 0;
+            transform: translateX(-40px) scale(0.95);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stagger-center.visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(2) { transition-delay: 0.10s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(3) { transition-delay: 0.15s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(4) { transition-delay: 0.20s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(5) { transition-delay: 0.25s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(6) { transition-delay: 0.30s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(7) { transition-delay: 0.35s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(8) { transition-delay: 0.40s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(9) { transition-delay: 0.45s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(10) { transition-delay: 0.50s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(11) { transition-delay: 0.55s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(12) { transition-delay: 0.60s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(13) { transition-delay: 0.65s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(14) { transition-delay: 0.70s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(15) { transition-delay: 0.75s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(16) { transition-delay: 0.80s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(17) { transition-delay: 0.85s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(18) { transition-delay: 0.90s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(19) { transition-delay: 0.95s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible > *:nth-child(20) { transition-delay: 1.00s; opacity: 1; transform: translateX(0) scale(1); }
 
         /* ===== STATS / GRAPHS SECTION ===== */
         .stats-visual-grid {
@@ -383,11 +445,22 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            cursor: default !important;
         }
 
         .gallery-modal.active {
             display: flex;
             animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .gallery-modal,
+        .gallery-modal * {
+            cursor: default !important;
         }
 
         .gallery-modal .close-btn {
@@ -396,6 +469,7 @@
             right: 40px;
             font-size: 2.5rem;
             color: rgba(255, 255, 255, 0.7);
+            cursor: pointer !important;
             transition: all 0.3s ease;
             z-index: 10001;
             background: rgba(255, 255, 255, 0.05);
@@ -447,6 +521,7 @@
             color: rgba(255, 255, 255, 0.8);
             font-size: 1.8rem;
             padding: 15px 20px;
+            cursor: pointer !important;
             border-radius: 50%;
             transition: all 0.3s ease;
             backdrop-filter: blur(15px);
@@ -507,6 +582,7 @@
             height: 60px;
             object-fit: cover;
             border-radius: 10px;
+            cursor: pointer !important;
             border: 2px solid transparent;
             transition: all 0.3s ease;
             opacity: 0.5;
@@ -537,6 +613,7 @@
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
+            cursor: pointer !important;
         }
 
         .gallery-modal .progress-dots .dot.active {
@@ -773,87 +850,6 @@
 
         footer a:hover {
             color: #764ba2;
-        }
-
-        /* ===== ANIMATIONS ===== */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .fade-right {
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: 0.7s ease;
-        }
-
-        .fade-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .fade-left {
-            opacity: 0;
-            transform: translateX(30px);
-            transition: 0.7s ease;
-        }
-
-        .fade-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .stagger-children>* {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .stagger-children.visible>*:nth-child(1) {
-            transition-delay: 0.05s;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .stagger-children.visible>*:nth-child(2) {
-            transition-delay: 0.10s;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .stagger-children.visible>*:nth-child(3) {
-            transition-delay: 0.15s;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .stagger-children.visible>*:nth-child(4) {
-            transition-delay: 0.20s;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .stagger-children.visible>*:nth-child(5) {
-            transition-delay: 0.25s;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .stagger-children.visible>*:nth-child(6) {
-            transition-delay: 0.30s;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .stagger-children.visible>*:nth-child(7) {
-            transition-delay: 0.35s;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .stagger-children.visible>*:nth-child(8) {
-            transition-delay: 0.40s;
-            opacity: 1;
-            transform: translateY(0);
         }
 
         /* ----- RESET & BASE (continued) ----- */
@@ -1758,6 +1754,12 @@
             body {
                 cursor: auto;
             }
+            .gallery-modal {
+                cursor: auto !important;
+            }
+            .gallery-modal * {
+                cursor: auto !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1805,7 +1807,7 @@
             }
         }
 
-        /* ===== DEMO POPUP - FIXED CURSOR ===== */
+        /* ===== DEMO POPUP ===== */
         .demo-popup {
             display: none;
             position: fixed;
@@ -1954,7 +1956,6 @@
                 }
             }
 
-            /* Gallery modal - show default cursor */
             .gallery-modal {
                 cursor: auto !important;
             }
@@ -2054,25 +2055,25 @@
 
     <!-- ===== ABOUT SECTION ===== -->
     <section id="about">
-        <h2 class="section-title fade-up">About Me</h2>
-        <p class="section-sub fade-up" style="transition-delay: 0.1s;">Designer, leader, problem-solver</p>
+        <h2 class="section-title slide-center-up">About Me</h2>
+        <p class="section-sub slide-center-up" style="transition-delay: 0.1s;">Designer, leader, problem-solver</p>
 
         <div class="about-grid">
-            <div class="about-image fade-right">🎨</div>
-            <div class="about-text fade-left">
-                <p>
+            <div class="about-image slide-center">🎨</div>
+            <div class="about-text">
+                <p class="slide-center-right">
                     I'm <strong>Alexa Reyes</strong> — a Graphic Designer and Creative Lead with a passion for
                     building brands and guiding teams. I've worked across <strong>brand identity</strong>,
                     <strong>digital design</strong>, and <strong>project management</strong>, helping companies
                     tell their story through strong visuals.
                 </p>
-                <p style="transition-delay: 0.1s;">
+                <p class="slide-center-right" style="transition-delay: 0.1s;">
                     My approach is simple: understand the goal, design with intention, and deliver results.
                     I'm comfortable leading creative teams, managing timelines, and collaborating with clients
                     to turn ideas into polished, impactful work.
                 </p>
 
-                <div class="about-stats stagger-children">
+                <div class="about-stats stagger-center">
                     <div class="stat">
                         <div class="stat-number">4+</div>
                         <div class="stat-label">Years Experience</div>
@@ -2094,7 +2095,7 @@
             <h3 style="text-align:center; font-size:1.6rem; font-weight:700; margin-bottom:8px; color:#e8e0d8;">Performance <span style="color:#667eea;">Metrics</span></h3>
             <p style="text-align:center; color:#b0b0d0; margin-bottom:30px; font-size:0.95rem;">Key achievements and expertise indicators</p>
 
-            <div class="stats-visual-grid stagger-children">
+            <div class="stats-visual-grid stagger-center">
                 <div class="stat-visual-card">
                     <span class="stat-icon">🎯</span>
                     <div class="stat-number">98%</div>
@@ -2130,10 +2131,10 @@
 
     <!-- ===== EXPERIENCE SECTION ===== -->
     <section id="experience">
-        <h2 class="section-title fade-up">Work Experience</h2>
-        <p class="section-sub fade-up" style="transition-delay: 0.1s;">Where I've contributed and made an impact</p>
+        <h2 class="section-title slide-center-up">Work Experience</h2>
+        <p class="section-sub slide-center-up" style="transition-delay: 0.1s;">Where I've contributed and made an impact</p>
 
-        <div class="experience-timeline stagger-children">
+        <div class="experience-timeline stagger-center">
             <div class="exp-card" onclick="showDemoPopup()">
                 <span class="click-label"><i class="fas fa-arrow-right"></i> Click to view</span>
                 <div class="exp-icon">🏢</div>
@@ -2179,10 +2180,10 @@
 
     <!-- ===== SKILLS SECTION ===== -->
     <section id="skills">
-        <h2 class="section-title fade-up">My Skills</h2>
-        <p class="section-sub fade-up" style="transition-delay: 0.1s;">Tools &amp; expertise I bring to the table</p>
+        <h2 class="section-title slide-center-up">My Skills</h2>
+        <p class="section-sub slide-center-up" style="transition-delay: 0.1s;">Tools &amp; expertise I bring to the table</p>
 
-        <div class="skills-grid stagger-children">
+        <div class="skills-grid stagger-center">
             <div class="skill-card">
                 <div class="skill-icon">🎨</div>
                 <div class="skill-name">Graphic Design</div>
@@ -2253,10 +2254,10 @@
 
     <!-- ===== PROJECTS SECTION ===== -->
     <section id="projects">
-        <h2 class="section-title fade-up">My Projects</h2>
-        <p class="section-sub fade-up" style="transition-delay: 0.1s;">Work that speaks for itself</p>
+        <h2 class="section-title slide-center-up">My Projects</h2>
+        <p class="section-sub slide-center-up" style="transition-delay: 0.1s;">Work that speaks for itself</p>
 
-        <div class="projects-grid stagger-children">
+        <div class="projects-grid stagger-center">
             <a href="#" class="project-card">
                 <div class="project-image" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 1px solid rgba(255,255,255,0.06);">
                     🏷️
@@ -2332,10 +2333,10 @@
 
     <!-- ===== CERTIFICATES SECTION ===== -->
     <section id="certificates">
-        <h2 class="section-title fade-up">Certificates</h2>
-        <p class="section-sub fade-up" style="transition-delay: 0.1s;">Continuous learning &amp; professional development</p>
+        <h2 class="section-title slide-center-up">Certificates</h2>
+        <p class="section-sub slide-center-up" style="transition-delay: 0.1s;">Continuous learning &amp; professional development</p>
 
-        <div class="cert-grid stagger-children">
+        <div class="cert-grid stagger-center">
             <div class="cert-card" onclick="showDemoPopup()">
                 <span class="click-label"><i class="fas fa-arrow-right"></i> View</span>
                 <div class="cert-icon">📜</div>
@@ -2370,42 +2371,42 @@
 
     <!-- ===== CONTACT SECTION ===== -->
     <section id="contact">
-        <h2 class="section-title fade-up">Get In Touch</h2>
-        <p class="section-sub fade-up" style="transition-delay: 0.1s;">Let's build something great together</p>
+        <h2 class="section-title slide-center-up">Get In Touch</h2>
+        <p class="section-sub slide-center-up" style="transition-delay: 0.1s;">Let's build something great together</p>
 
         <div class="contact-wrapper">
-            <div class="contact-info fade-right">
-                <h3>Let's talk!</h3>
-                <p>
+            <div class="contact-info">
+                <h3 class="slide-center">Let's talk!</h3>
+                <p class="slide-center" style="transition-delay: 0.1s;">
                     I'm always open to new opportunities, creative collaborations, or just a conversation about design and ideas. If you're looking for a designer who brings both <strong>creativity and structure</strong> to every project, I'd love to hear from you. Whether it's a full-time role, a freelance project, or a creative partnership — let's explore how I can contribute to your team.
                 </p>
 
-                <p style="color: #c0c0e0; font-size: 1rem; margin-top: -10px; margin-bottom: 20px;">
+                <p class="slide-center" style="transition-delay: 0.15s; color: #c0c0e0; font-size: 1rem; margin-top: -10px; margin-bottom: 20px;">
                     Reach out — I'd love to connect! 😊
                 </p>
 
-                <div class="contact-item">
+                <div class="contact-item slide-center" style="transition-delay: 0.2s;">
                     <div class="icon">📧</div>
                     <span><a href="mailto:airavp14@gmail.com">airavp14@gmail.com</a></span>
                 </div>
 
-                <div class="contact-item">
+                <div class="contact-item slide-center" style="transition-delay: 0.25s;">
                     <div class="icon">📱</div>
                     <span class="asterisk-phone">+63 9** **** ***</span>
                 </div>
 
-                <div class="contact-item">
+                <div class="contact-item slide-center" style="transition-delay: 0.3s;">
                     <div class="icon">📍</div>
                     <span>Philippines</span>
                 </div>
 
-                <div class="contact-item">
+                <div class="contact-item slide-center" style="transition-delay: 0.35s;">
                     <div class="icon">🌐</div>
                     <span><a href="#" target="_blank">alexa-designs.com</a></span>
                 </div>
             </div>
 
-            <div class="connect-sidebar fade-left">
+            <div class="connect-sidebar slide-center-right">
                 <div class="connect-title">Let's <span class="gold">Connect</span></div>
                 <div class="connect-desc">
                     I'm currently exploring new opportunities where I can grow, contribute, and make a real impact. If you have a project, a role, or just a great idea — I'm all ears. Let's create something meaningful together.
@@ -2432,7 +2433,7 @@
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <footer class="fade-up">
+    <footer class="slide-center-up">
         <div class="quote">
             "Design is not just what it looks like — it's how it works."
             <span>— Alexa Reyes</span>
@@ -2607,10 +2608,6 @@
                 const countSpan = uiHint.querySelector('.photo-count');
                 if (countSpan) countSpan.textContent = galleryData.uiDesign.length;
             }
-
-            document.querySelectorAll('.stagger-children').forEach(el => {
-                el.classList.add('visible');
-            });
         });
 
         let currentGallery = [];
@@ -2787,33 +2784,88 @@
             }
         });
 
-        // ===== SCROLL ANIMATIONS =====
+        // ===== SCROLL ANIMATIONS (matching Paul David portfolio) =====
         document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll(
+                '.slide-center, .slide-center-right, .slide-center-up, .stagger-center'
+            );
+
             const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        if (entry.target.classList.contains('stagger-center')) {
+                            entry.target.classList.add('visible');
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            animatedElements.forEach((element) => {
+                observer.observe(element);
+            });
+
+            const staggerItems = document.querySelectorAll('.stagger-center .stat, .stagger-center .skill-card, .stagger-center .project-card, .stagger-center .exp-card, .stagger-center .cert-card, .stagger-center .stat-visual-card');
+            const itemObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0) scale(1)';
+                        itemObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            staggerItems.forEach((item) => {
+                itemObserver.observe(item);
+            });
+
+            const skillCards = document.querySelectorAll('.skill-card');
+            const skillObserver = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
                     }
                 });
             }, {
-                threshold: 0.12,
-                rootMargin: '0px 0px -40px 0px'
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             });
 
-            document.querySelectorAll('.fade-up, .fade-right, .fade-left, .stagger-children, .stat-visual-card').forEach(el => {
-                observer.observe(el);
+            skillCards.forEach((card) => {
+                skillObserver.observe(card);
             });
 
-            document.querySelectorAll('.stat-visual-card').forEach(card => {
-                const bar = card.querySelector('.stat-bar-fill');
-                if (bar) {
-                    const fillValue = bar.style.getPropertyValue('--fill');
-                    if (fillValue) {
-                        setTimeout(() => {
-                            bar.style.width = fillValue;
-                        }, 300);
+            // Also handle stat-visual-card bars
+            const statCards = document.querySelectorAll('.stat-visual-card');
+            const statObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        const bar = entry.target.querySelector('.stat-bar-fill');
+                        if (bar) {
+                            const fillValue = bar.style.getPropertyValue('--fill');
+                            if (fillValue) {
+                                setTimeout(() => {
+                                    bar.style.width = fillValue;
+                                }, 300);
+                            }
+                        }
                     }
-                }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            statCards.forEach((card) => {
+                statObserver.observe(card);
             });
         });
 
