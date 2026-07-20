@@ -14,18 +14,18 @@
         }
 
         :root {
-            --bg-body: #f0ebe3;
-            --bg-card: rgba(255, 250, 245, 0.85);
-            --bg-soft: rgba(240, 235, 227, 0.7);
-            --bg-elevated: rgba(255, 250, 245, 0.5);
-            --border-light: rgba(200, 190, 180, 0.3);
-            --text-primary: #1a1414;
-            --text-secondary: #3d3333;
+            --bg-body: #0a0808;
+            --bg-card: rgba(42, 34, 34, 0.75);
+            --bg-soft: rgba(35, 29, 29, 0.6);
+            --bg-elevated: rgba(51, 42, 42, 0.5);
+            --border-light: rgba(61, 51, 51, 0.3);
+            --text-primary: #f2ece8;
+            --text-secondary: #d4c8c0;
             --text-muted: #8a7a7a;
-            --accent-primary: #cc6a6a;
-            --accent-secondary: #b55050;
-            --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.06);
-            --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.1);
+            --accent-primary: #e88282;
+            --accent-secondary: #cc6262;
+            --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.6);
+            --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.8);
             --nav-height: 64px;
         }
 
@@ -76,12 +76,12 @@
             background: url('./images/virtual.png') center center / cover no-repeat;
         }
 
-        /* Light overlay for text readability */
+        /* Light overlay so text is readable but image shows through */
         .hero-bg::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.35);
+            background: rgba(0, 0, 0, 0.55);
             z-index: 0;
         }
 
@@ -100,91 +100,15 @@
             width: 100%;
         }
 
-        /* Hero text - WHITE for readability on dark background */
-        .hero-centered .badge {
-            background: rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-            padding: 0.5rem 1.5rem;
-            border-radius: 9999px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            display: inline-block;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-centered h1 {
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            font-weight: 700;
-            line-height: 1.05;
-            letter-spacing: -0.03em;
-            color: #ffffff;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .hero-centered h1 .accent-primary,
-        .hero-centered h1 .accent-secondary {
-            color: #ffffff;
-        }
-
-        .hero-centered .sub {
-            font-size: clamp(1rem, 1.3vw, 1.3rem);
-            color: rgba(255, 255, 255, 0.85);
-            max-width: 600px;
-            margin: 1.5rem auto 0;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-centered .stats {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-            margin-top: 2rem;
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.85);
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Hero buttons - white version for dark background */
-        .hero-centered .btn-primary {
-            background: rgba(255, 255, 255, 0.9);
-            color: #1a1414;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-        .hero-centered .btn-primary:hover {
-            transform: translateY(-2px);
-            background: #ffffff;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-centered .btn-outline {
-            border: 1.5px solid rgba(255, 255, 255, 0.6);
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.1);
-            transition: all 0.2s ease;
-            backdrop-filter: blur(4px);
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-        .hero-centered .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.25);
-            color: #ffffff;
-            transform: translateY(-2px);
-            border-color: rgba(255, 255, 255, 0.9);
-        }
-
         .btn-primary {
             background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
             color: #fff;
             transition: all 0.2s ease;
-            box-shadow: 0 4px 16px rgba(204, 106, 106, 0.2);
+            box-shadow: 0 4px 16px rgba(232, 130, 130, 0.2);
         }
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(204, 106, 106, 0.3);
+            box-shadow: 0 8px 30px rgba(232, 130, 130, 0.3);
         }
 
         .btn-outline {
@@ -203,10 +127,10 @@
             width: 380px;
             height: 480px;
             border-radius: 40% 40% 20% 20% / 50% 50% 20% 20%;
-            background: linear-gradient(135deg, var(--bg-soft), var(--border-light));
-            border: 2px solid rgba(204, 106, 106, 0.15);
+            background: linear-gradient(135deg, #4a3030, rgba(61, 51, 51, 0.5));
+            border: 2px solid rgba(232, 130, 130, 0.15);
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
         }
         .photo-frame img {
             width: 100%;
@@ -243,7 +167,7 @@
             margin-bottom: 0.75rem;
         }
         .service-icon.admin {
-            background: rgba(204, 106, 106, 0.12);
+            background: rgba(58, 42, 42, 0.6);
             color: var(--accent-secondary);
         }
 
@@ -294,7 +218,7 @@
         .tool-badge:hover {
             color: var(--text-primary);
             border-color: var(--accent-secondary);
-            background: rgba(204, 106, 106, 0.08);
+            background: rgba(58, 42, 42, 0.5);
         }
 
         .tool-icon {
@@ -367,13 +291,26 @@
             border-radius: 12px;
             padding: 1.25rem;
             margin-top: 1.5rem;
-            background: rgba(204, 106, 106, 0.08);
-            border: 1px solid rgba(204, 106, 106, 0.12);
+            background: rgba(74, 48, 48, 0.5);
+            border: 1px solid rgba(232, 130, 130, 0.15);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
         }
         .about-card .usp p {
             color: var(--text-primary);
+        }
+
+        .badge {
+            background: rgba(0, 0, 0, 0.6);
+            color: #e8c39e;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(232, 195, 158, 0.15);
+            display: inline-block;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
         .skills-expanding {
@@ -393,9 +330,9 @@
             font-size: 0.8rem;
             border: 1px solid var(--border-light);
             transition: all 0.2s ease;
-            background: rgba(204, 106, 106, 0.08);
+            background: rgba(58, 42, 42, 0.5);
             color: var(--accent-secondary);
-            border-color: rgba(204, 106, 106, 0.15);
+            border-color: rgba(204, 98, 98, 0.2);
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
         }
@@ -430,7 +367,7 @@
             justify-content: center;
             font-size: 1.1rem;
             flex-shrink: 0;
-            background: var(--bg-body);
+            background: rgba(10, 8, 8, 0.5);
             color: var(--text-secondary);
         }
 
@@ -452,27 +389,27 @@
         }
 
         .footer-bg {
-            background: rgba(230, 222, 214, 0.9);
+            background: rgba(18, 14, 14, 0.9);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-top: 1px solid rgba(200, 190, 180, 0.2);
+            border-top: 1px solid rgba(61, 51, 51, 0.2);
         }
         footer .quote {
             font-size: 1.1rem;
-            color: var(--text-muted);
+            color: #8a7a7a;
             font-style: italic;
             text-align: center;
             padding-top: 0.75rem;
             margin-bottom: 0;
         }
         footer .quote span {
-            color: var(--accent-secondary);
+            color: #e8c39e;
         }
         footer .copyright {
             text-align: center;
-            color: var(--text-muted);
+            color: #5a4a4a;
             font-size: 0.85rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
             padding-top: 20px;
             margin-top: 0;
         }
@@ -485,14 +422,14 @@
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 9999px;
-            box-shadow: 0 10px 30px rgba(204, 106, 106, 0.2);
+            box-shadow: 0 10px 30px rgba(232, 130, 130, 0.2);
             z-index: 50;
             font-weight: 600;
             transition: all 0.2s ease;
         }
         .floating-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 12px 40px rgba(204, 106, 106, 0.3);
+            box-shadow: 0 12px 40px rgba(232, 130, 130, 0.3);
         }
 
         .scroll-dots {
@@ -511,20 +448,60 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(232, 130, 130, 0.2);
             background: transparent;
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             cursor: pointer;
         }
         .scroll-dot.active {
-            background: #ffffff;
-            border-color: #ffffff;
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
             transform: scale(1.4);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(232, 130, 130, 0.15);
         }
         .scroll-dot:hover {
-            border-color: #ffffff;
+            border-color: var(--accent-primary);
             transform: scale(1.2);
+        }
+
+        /* Hero text - Dark theme colors from reference */
+        .hero-centered .badge {
+            margin-bottom: 1.5rem;
+        }
+        .hero-centered h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: #f2ece8;
+        }
+        .hero-centered h1 .accent-primary {
+            color: #e88282;
+        }
+        .hero-centered h1 .accent-secondary {
+            color: #cc6262;
+        }
+        .hero-centered .sub {
+            font-size: clamp(1rem, 1.3vw, 1.3rem);
+            color: #d4c8c0;
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+        }
+        .hero-centered .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .hero-centered .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            color: #d4c8c0;
         }
 
         .intro-section {
@@ -539,11 +516,11 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            box-shadow: 0 -20px 60px rgba(0,0,0,0.03);
+            box-shadow: 0 -20px 60px rgba(0,0,0,0.15);
             will-change: transform;
             transform: translateY(0);
             transition: none;
-            border-top: 1px solid rgba(200, 190, 180, 0.15);
+            border-top: 1px solid rgba(61, 51, 51, 0.2);
         }
         .intro-section .intro-inner {
             max-width: 1100px;
@@ -602,16 +579,16 @@
             left: 0 !important;
             right: 0 !important;
             z-index: 1000 !important;
-            background: rgba(240, 235, 227, 0.85) !important;
+            background: rgba(10, 8, 8, 0.85) !important;
             backdrop-filter: blur(16px) !important;
             -webkit-backdrop-filter: blur(16px) !important;
-            border-bottom: 1px solid rgba(200, 190, 180, 0.2) !important;
+            border-bottom: 1px solid rgba(61, 51, 51, 0.2) !important;
             height: var(--nav-height) !important;
             transition: box-shadow 0.3s ease !important;
             will-change: transform;
         }
         nav.scrolled {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
         }
         .nav-container {
             display: flex;
@@ -668,7 +645,7 @@
         }
 
         .availability-badge {
-            background: rgba(240, 235, 227, 0.5);
+            background: rgba(35, 29, 29, 0.5);
             color: var(--text-secondary);
             padding: 0.4rem 1rem;
             border-radius: 9999px;
@@ -696,10 +673,10 @@
             left: 0;
             right: 0;
             z-index: 999;
-            background: rgba(240, 235, 227, 0.95);
+            background: rgba(10, 8, 8, 0.95);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(200, 190, 180, 0.2);
+            border-bottom: 1px solid rgba(61, 51, 51, 0.2);
             padding: 1.5rem 2rem;
             display: none;
             flex-direction: column;
@@ -711,23 +688,19 @@
 
         /* ===== ALL SECTIONS WITH GLASS EFFECT ===== */
         section:not(#home) {
-            background: rgba(240, 235, 227, 0.4) !important;
+            background: rgba(10, 8, 8, 0.4) !important;
             backdrop-filter: blur(8px) !important;
             -webkit-backdrop-filter: blur(8px) !important;
-            border-top: 1px solid rgba(200, 190, 180, 0.15);
-            border-bottom: 1px solid rgba(200, 190, 180, 0.15);
+            border-top: 1px solid rgba(61, 51, 51, 0.15);
+            border-bottom: 1px solid rgba(61, 51, 51, 0.15);
         }
 
         /* About section - remove extra top space */
-        #about .text-center {
-            margin-bottom: 0 !important;
-            padding-top: 0 !important;
+        #about .text-center.mb-14 {
+            margin-bottom: 1.5rem !important;
         }
-        #about .text-center h2 {
+        #about .text-center .section-title {
             margin-top: 0 !important;
-        }
-        #about .text-center p {
-            margin-top: 0.5rem !important;
         }
 
         /* Body background with subtle pattern/color */
@@ -736,9 +709,9 @@
             position: fixed;
             inset: 0;
             background: 
-                radial-gradient(ellipse at 20% 50%, rgba(204, 106, 106, 0.03) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 50%, rgba(181, 80, 80, 0.03) 0%, transparent 60%),
-                radial-gradient(ellipse at 50% 100%, rgba(204, 106, 106, 0.02) 0%, transparent 50%);
+                radial-gradient(ellipse at 20% 50%, rgba(232, 130, 130, 0.05) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 50%, rgba(204, 98, 98, 0.05) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 100%, rgba(232, 130, 130, 0.03) 0%, transparent 50%);
             z-index: 0;
             pointer-events: none;
         }
@@ -830,7 +803,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8 h-full">
             <div class="nav-container">
                 <div class="nav-left">
-                    <span class="text-2xl font-bold text-[#cc6a6a]">A<span class="text-[#b55050]">R</span></span>
+                    <span class="text-2xl font-bold text-[#e88282]">A<span class="text-[#cc6262]">R</span></span>
                 </div>
                 <div class="nav-center">
                     <a href="#home" class="active">Home</a>
@@ -845,7 +818,7 @@
                     <span class="availability-badge hidden sm:inline-flex">
                         <span class="icon">✦</span> Available Worldwide · Remote
                     </span>
-                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-full hover:bg-[#e0d8d0] transition">
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-full hover:bg-[#3d3333] transition">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="3" y1="6" x2="21" y2="6"></line>
                             <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -859,13 +832,13 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden">
-        <a href="#home" class="hover:text-[#cc6a6a] py-1">Home</a>
-        <a href="#intro" class="hover:text-[#cc6a6a] py-1">Intro</a>
-        <a href="#about" class="hover:text-[#cc6a6a] py-1">About</a>
-        <a href="#services" class="hover:text-[#cc6a6a] py-1">Services</a>
-        <a href="#tools" class="hover:text-[#cc6a6a] py-1">Tools</a>
-        <a href="#portfolio" class="hover:text-[#cc6a6a] py-1">Portfolio</a>
-        <a href="#contact" class="hover:text-[#cc6a6a] py-1">Contact</a>
+        <a href="#home" class="hover:text-[#e88282] py-1">Home</a>
+        <a href="#intro" class="hover:text-[#e88282] py-1">Intro</a>
+        <a href="#about" class="hover:text-[#e88282] py-1">About</a>
+        <a href="#services" class="hover:text-[#e88282] py-1">Services</a>
+        <a href="#tools" class="hover:text-[#e88282] py-1">Tools</a>
+        <a href="#portfolio" class="hover:text-[#e88282] py-1">Portfolio</a>
+        <a href="#contact" class="hover:text-[#e88282] py-1">Contact</a>
         <a href="#contact" class="mt-2 btn-primary text-white px-4 py-2 rounded-full text-center">Hire Me</a>
     </div>
 
@@ -887,6 +860,7 @@
             </div>
             <div class="stats">
                 <span>✓ 4+ Years Experience</span>
+                <span>✓ 50+ Projects</span>
                 <span>✓ 100% Remote</span>
             </div>
         </div>
@@ -904,7 +878,7 @@
                 </div>
                 <div class="intro-photo">
                     <div class="photo-frame">
-                        <img src="./images/alexa.jpg" alt="Alexa Reyes" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:8rem;text-align:center;line-height:1;color:#cc6a6a;\'>📋</div>';" />
+                        <img src="./images/alexa.jpg" alt="Alexa Reyes" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:8rem;text-align:center;line-height:1;color:#e88282;\'>📋</div>';" />
                     </div>
                 </div>
             </div>
@@ -914,20 +888,20 @@
     <!-- About Section -->
     <section id="about" class="py-16">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center">
-                <h2 class="text-3xl md:text-4xl text-[#1a1414]">Hi, I'm <span class="text-[#cc6a6a]">Alexa</span> <span class="text-[#b55050]">Reyes</span></h2>
-                <p class="text-[#3d3333] max-w-2xl mx-auto mt-1">A Virtual Assistant and Admin Professional ready to contribute, organize, and grow with your team.</p>
+            <div class="text-center mb-6">
+                <h2 class="text-3xl md:text-4xl text-[#f2ece8]">Hi, I'm <span class="text-[#e88282]">Alexa</span> <span class="text-[#cc6262]">Reyes</span></h2>
+                <p class="text-[#d4c8c0] max-w-2xl mx-auto mt-2">A Virtual Assistant and Admin Professional ready to contribute, organize, and grow with your team.</p>
             </div>
             <div class="about-grid">
                 <div>
-                    <p class="text-[#3d3333] mb-4">
-                        I'm a <strong class="text-[#1a1414]">Virtual Assistant and Administrative Professional</strong> 
+                    <p class="text-[#d4c8c0] mb-4">
+                        I'm a <strong class="text-[#f2ece8]">Virtual Assistant and Administrative Professional</strong> 
                         with a passion for helping businesses stay organized and efficient. With experience in 
-                        <strong class="text-[#cc6a6a]">executive support, operations management, and project coordination</strong>, 
+                        <strong class="text-[#e88282]">executive support, operations management, and project coordination</strong>, 
                         I provide seamless administrative solutions that keep teams running smoothly.
                     </p>
-                    <p class="text-[#3d3333]">
-                        Beyond task management, I bring a <strong class="text-[#b55050]">proactive mindset</strong> 
+                    <p class="text-[#d4c8c0]">
+                        Beyond task management, I bring a <strong class="text-[#cc6262]">proactive mindset</strong> 
                         and a commitment to excellence. I believe that good administration is the foundation of great execution — 
                         and I'm building my career around that principle.
                     </p>
@@ -942,17 +916,17 @@
                 </div>
                 <div>
                     <div class="about-card">
-                        <h3 class="text-xl font-bold mb-4 text-[#1a1414]">Why Work <span class="text-[#cc6a6a]">With</span> <span class="text-[#b55050]">Me</span></h3>
-                        <p class="text-[#3d3333]">As an admin professional, I bring:</p>
-                        <ul class="space-y-2 mt-3 text-[#3d3333]">
-                            <li class="flex gap-2"><span class="text-[#cc6a6a]">✓</span> <strong>Proven experience</strong> — 4+ years in admin support</li>
-                            <li class="flex gap-2"><span class="text-[#cc6a6a]">✓</span> <strong>Reliable execution</strong> — I get things done on time</li>
-                            <li class="flex gap-2"><span class="text-[#cc6a6a]">✓</span> <strong>Systematic approach</strong> — I create order from chaos</li>
-                            <li class="flex gap-2"><span class="text-[#cc6a6a]">✓</span> <strong>Proactive mindset</strong> — I anticipate needs before they arise</li>
-                            <li class="flex gap-2"><span class="text-[#cc6a6a]">✓</span> <strong>Versatility</strong> — Admin + Operations in one person</li>
+                        <h3 class="text-xl font-bold mb-4 text-[#f2ece8]">Why Work <span class="text-[#e88282]">With</span> <span class="text-[#cc6262]">Me</span></h3>
+                        <p class="text-[#d4c8c0]">As an admin professional, I bring:</p>
+                        <ul class="space-y-2 mt-3 text-[#d4c8c0]">
+                            <li class="flex gap-2"><span class="text-[#e88282]">✓</span> <strong>Proven experience</strong> — 4+ years in admin support</li>
+                            <li class="flex gap-2"><span class="text-[#e88282]">✓</span> <strong>Reliable execution</strong> — I get things done on time</li>
+                            <li class="flex gap-2"><span class="text-[#e88282]">✓</span> <strong>Systematic approach</strong> — I create order from chaos</li>
+                            <li class="flex gap-2"><span class="text-[#e88282]">✓</span> <strong>Proactive mindset</strong> — I anticipate needs before they arise</li>
+                            <li class="flex gap-2"><span class="text-[#e88282]">✓</span> <strong>Versatility</strong> — Admin + Operations in one person</li>
                         </ul>
                         <div class="usp">
-                            <p class="font-medium text-[#cc6a6a]">💡 "Good administration is the foundation of great execution. I build the systems that let you focus on what matters most."</p>
+                            <p class="font-medium text-[#e88282]">💡 "Good administration is the foundation of great execution. I build the systems that let you focus on what matters most."</p>
                         </div>
                     </div>
                 </div>
@@ -964,8 +938,8 @@
     <section id="services" class="py-16">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl text-[#1a1414]">My <span class="text-[#cc6a6a]">Services</span></h2>
-                <p class="text-[#3d3333] mt-2">Comprehensive administrative support for your business.</p>
+                <h2 class="text-3xl md:text-4xl text-[#f2ece8]">My <span class="text-[#e88282]">Services</span></h2>
+                <p class="text-[#d4c8c0] mt-2">Comprehensive administrative support for your business.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="admin-col">
@@ -973,7 +947,7 @@
                     <div class="space-y-4">
                         <div class="service-card">
                             <div class="service-icon admin">📋</div>
-                            <h3 class="font-bold text-lg text-[#1a1414]">Executive Support</h3>
+                            <h3 class="font-bold text-lg text-[#f2ece8]">Executive Support</h3>
                             <ul>
                                 <li>Calendar &amp; email management</li>
                                 <li>Meeting coordination &amp; note-taking</li>
@@ -983,7 +957,7 @@
                         </div>
                         <div class="service-card">
                             <div class="service-icon admin">📊</div>
-                            <h3 class="font-bold text-lg text-[#1a1414]">Operations Support</h3>
+                            <h3 class="font-bold text-lg text-[#f2ece8]">Operations Support</h3>
                             <ul>
                                 <li>Process documentation &amp; workflow optimization</li>
                                 <li>Project coordination &amp; task management</li>
@@ -998,7 +972,7 @@
                     <div class="space-y-4">
                         <div class="service-card">
                             <div class="service-icon admin">📁</div>
-                            <h3 class="font-bold text-lg text-[#1a1414]">Document Management</h3>
+                            <h3 class="font-bold text-lg text-[#f2ece8]">Document Management</h3>
                             <ul>
                                 <li>Digital filing &amp; organization systems</li>
                                 <li>Document formatting &amp; processing</li>
@@ -1008,7 +982,7 @@
                         </div>
                         <div class="service-card">
                             <div class="service-icon admin">📧</div>
-                            <h3 class="font-bold text-lg text-[#1a1414]">Communication &amp; Coordination</h3>
+                            <h3 class="font-bold text-lg text-[#f2ece8]">Communication &amp; Coordination</h3>
                             <ul>
                                 <li>Email management &amp; filtering</li>
                                 <li>Meeting scheduling &amp; coordination</li>
@@ -1021,8 +995,8 @@
             </div>
 
             <div class="skills-expanding mt-8">
-                <h3 class="text-xl font-bold mb-2 text-[#1a1414]">🌱 Currently Expanding — Always Learning</h3>
-                <p class="text-[#3d3333] text-sm mb-4">I believe in growing with my clients. These are skills I'm actively developing:</p>
+                <h3 class="text-xl font-bold mb-2 text-[#f2ece8]">🌱 Currently Expanding — Always Learning</h3>
+                <p class="text-[#d4c8c0] text-sm mb-4">I believe in growing with my clients. These are skills I'm actively developing:</p>
                 <div class="flex flex-wrap gap-2 justify-center">
                     <span class="pill">📋 Advanced Project Management</span>
                     <span class="pill">📊 Operations Strategy</span>
@@ -1040,8 +1014,8 @@
     <section id="tools" class="py-16">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl text-[#1a1414]">I Already Know <span class="text-[#cc6a6a]">The Tools</span> <span class="text-[#b55050]">You Use</span></h2>
-                <p class="text-[#3d3333] mt-2">Familiar with these tools and ready to learn your stack quickly.</p>
+                <h2 class="text-3xl md:text-4xl text-[#f2ece8]">I Already Know <span class="text-[#e88282]">The Tools</span> <span class="text-[#cc6262]">You Use</span></h2>
+                <p class="text-[#d4c8c0] mt-2">Familiar with these tools and ready to learn your stack quickly.</p>
             </div>
             <div class="tools-grid-wrapper">
                 <div>
@@ -1092,27 +1066,27 @@
     <section id="portfolio" class="py-16">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl text-[#1a1414]">See What <span class="text-[#cc6a6a]">I've Done</span></h2>
-                <p class="text-[#3d3333] mt-2">Projects and work samples from my journey as an admin professional.</p>
+                <h2 class="text-3xl md:text-4xl text-[#f2ece8]">See What <span class="text-[#e88282]">I've Done</span></h2>
+                <p class="text-[#d4c8c0] mt-2">Projects and work samples from my journey as an admin professional.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="portfolio-card">
                     <div class="text-4xl mb-3">📋</div>
-                    <h4 class="font-bold text-[#1a1414]">Executive Support System</h4>
-                    <p class="text-sm text-[#3d3333] mt-1">Comprehensive executive support including calendar management, email filtering, and meeting coordination.</p>
-                    <span class="inline-block mt-3 text-xs font-semibold px-3 py-1 rounded-full bg-[rgba(204,106,106,0.12)] text-[#b55050]">Completed</span>
+                    <h4 class="font-bold text-[#f2ece8]">Executive Support System</h4>
+                    <p class="text-sm text-[#d4c8c0] mt-1">Comprehensive executive support including calendar management, email filtering, and meeting coordination.</p>
+                    <span class="inline-block mt-3 text-xs font-semibold px-3 py-1 rounded-full bg-[#3a2a2a] text-[#cc6262]">Completed</span>
                 </div>
                 <div class="portfolio-card">
                     <div class="text-4xl mb-3">📊</div>
-                    <h4 class="font-bold text-[#1a1414]">Operations Workflow Optimization</h4>
-                    <p class="text-sm text-[#3d3333] mt-1">Streamlined operational workflows with efficient document management and process documentation.</p>
-                    <span class="inline-block mt-3 text-xs font-semibold px-3 py-1 rounded-full bg-[rgba(204,106,106,0.12)] text-[#b55050]">Completed</span>
+                    <h4 class="font-bold text-[#f2ece8]">Operations Workflow Optimization</h4>
+                    <p class="text-sm text-[#d4c8c0] mt-1">Streamlined operational workflows with efficient document management and process documentation.</p>
+                    <span class="inline-block mt-3 text-xs font-semibold px-3 py-1 rounded-full bg-[#3a2a2a] text-[#cc6262]">Completed</span>
                 </div>
                 <div class="portfolio-card">
                     <div class="text-4xl mb-3">📁</div>
-                    <h4 class="font-bold text-[#1a1414]">Document Management System</h4>
-                    <p class="text-sm text-[#3d3333] mt-1">Digital filing system that improved document retrieval time by 70% for a team of 20+ employees.</p>
-                    <span class="inline-block mt-3 text-xs font-semibold px-3 py-1 rounded-full bg-[rgba(204,106,106,0.12)] text-[#b55050]">Completed</span>
+                    <h4 class="font-bold text-[#f2ece8]">Document Management System</h4>
+                    <p class="text-sm text-[#d4c8c0] mt-1">Digital filing system that improved document retrieval time by 70% for a team of 20+ employees.</p>
+                    <span class="inline-block mt-3 text-xs font-semibold px-3 py-1 rounded-full bg-[#3a2a2a] text-[#cc6262]">Completed</span>
                 </div>
             </div>
         </div>
@@ -1122,44 +1096,44 @@
     <section id="contact" class="py-16">
         <div class="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-                <h2 class="text-3xl text-[#1a1414]">Get in <span class="text-[#cc6a6a]">Touch</span></h2>
-                <p class="text-[#3d3333] text-sm mt-1 mb-6">Whether you need admin support, operations help, or someone to keep things running smoothly — I'm ready.</p>
+                <h2 class="text-3xl text-[#f2ece8]">Get in <span class="text-[#e88282]">Touch</span></h2>
+                <p class="text-[#d4c8c0] text-sm mt-1 mb-6">Whether you need admin support, operations help, or someone to keep things running smoothly — I'm ready.</p>
                 <div class="space-y-3">
                     <a href="mailto:airavp14@gmail.com" class="contact-method">
                         <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                        <div><span class="text-xs text-[#8a7a7a]">Email</span><br><strong class="text-[#1a1414]">airavp14@gmail.com</strong></div>
+                        <div><span class="text-xs text-[#8a7a7a]">Email</span><br><strong class="text-[#f2ece8]">airavp14@gmail.com</strong></div>
                     </a>
                     <a href="#" class="contact-method">
                         <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-                        <div><span class="text-xs text-[#8a7a7a]">WhatsApp</span><br><strong class="text-[#1a1414]">+63 9** **** ***</strong></div>
+                        <div><span class="text-xs text-[#8a7a7a]">WhatsApp</span><br><strong class="text-[#f2ece8]">+63 9** **** ***</strong></div>
                     </a>
                     <a href="#" class="contact-method">
                         <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
-                        <div><span class="text-xs text-[#8a7a7a]">LinkedIn</span><br><strong class="text-[#1a1414]">Alexa Reyes</strong></div>
+                        <div><span class="text-xs text-[#8a7a7a]">LinkedIn</span><br><strong class="text-[#f2ece8]">Alexa Reyes</strong></div>
                     </a>
                 </div>
             </div>
-            <div class="bg-[rgba(255,250,245,0.5)] backdrop-blur-[12px] rounded-2xl p-8 border border-[rgba(200,190,180,0.3)] flex flex-col justify-center">
-                <h2 class="text-3xl font-bold text-[#1a1414] mb-3">Let's <span class="text-[#cc6a6a]">Connect</span></h2>
-                <p class="text-[#3d3333] text-sm leading-relaxed mb-6">
+            <div class="bg-[rgba(42,34,34,0.5)] backdrop-blur-[12px] rounded-2xl p-8 border border-[rgba(61,51,51,0.3)] flex flex-col justify-center">
+                <h2 class="text-3xl font-bold text-[#f2ece8] mb-3">Let's <span class="text-[#e88282]">Connect</span></h2>
+                <p class="text-[#d4c8c0] text-sm leading-relaxed mb-6">
                     I'm a Virtual Assistant and Admin Professional looking for opportunities where I can grow, contribute, and make a real impact. If you need reliable administrative support — I'm all ears. Let's create something meaningful together.
                 </p>
                 <div class="flex flex-wrap gap-3 mb-6">
-                    <a href="#" class="w-12 h-12 rounded-full bg-[rgba(240,235,227,0.5)] border border-[rgba(200,190,180,0.3)] flex items-center justify-center text-[#3d3333] hover:text-[#cc6a6a] hover:border-[#cc6a6a] transition-all">
+                    <a href="#" class="w-12 h-12 rounded-full bg-[rgba(26,24,24,0.5)] border border-[rgba(61,51,51,0.3)] flex items-center justify-center text-[#d4c8c0] hover:text-[#e88282] hover:border-[#e88282] transition-all">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" class="w-12 h-12 rounded-full bg-[rgba(240,235,227,0.5)] border border-[rgba(200,190,180,0.3)] flex items-center justify-center text-[#3d3333] hover:text-[#cc6a6a] hover:border-[#cc6a6a] transition-all">
+                    <a href="#" class="w-12 h-12 rounded-full bg-[rgba(26,24,24,0.5)] border border-[rgba(61,51,51,0.3)] flex items-center justify-center text-[#d4c8c0] hover:text-[#e88282] hover:border-[#e88282] transition-all">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="mailto:airavp14@gmail.com" class="w-12 h-12 rounded-full bg-[rgba(240,235,227,0.5)] border border-[rgba(200,190,180,0.3)] flex items-center justify-center text-[#3d3333] hover:text-[#cc6a6a] hover:border-[#cc6a6a] transition-all">
+                    <a href="mailto:airavp14@gmail.com" class="w-12 h-12 rounded-full bg-[rgba(26,24,24,0.5)] border border-[rgba(61,51,51,0.3)] flex items-center justify-center text-[#d4c8c0] hover:text-[#e88282] hover:border-[#e88282] transition-all">
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
-                <a href="mailto:airavp14@gmail.com" class="btn-primary text-white px-8 py-3.5 rounded-full text-sm font-semibold shadow-md shadow-[#cc6a6a]/10 text-center inline-flex items-center justify-center gap-2">
+                <a href="mailto:airavp14@gmail.com" class="btn-primary text-white px-8 py-3.5 rounded-full text-sm font-semibold shadow-md shadow-[#e88282]/10 text-center inline-flex items-center justify-center gap-2">
                     <i class="fas fa-paper-plane"></i> Reach Out Now
                 </a>
-                <div class="flex items-center gap-3 mt-4 text-sm text-[#3d3333]">
-                    <span class="w-3 h-3 rounded-full bg-[#b55050] animate-pulse"></span>
+                <div class="flex items-center gap-3 mt-4 text-sm text-[#d4c8c0]">
+                    <span class="w-3 h-3 rounded-full bg-[#cc6262] animate-pulse"></span>
                     <span>Open to opportunities</span>
                 </div>
             </div>
@@ -1170,33 +1144,33 @@
     <footer class="footer-bg text-gray-300 py-12">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-                <span class="text-2xl font-bold text-[#1a1414]">A<span class="text-[#b55050]">R</span></span>
-                <p class="text-xs text-[#8a7a7a] mt-2">Virtual Assistant · Admin Professional</p>
+                <span class="text-2xl font-bold text-white">A<span class="text-[#cc6262]">R</span></span>
+                <p class="text-xs text-gray-400 mt-2">Virtual Assistant · Admin Professional</p>
             </div>
             <div>
-                <h6 class="text-[#1a1414] font-semibold mb-3">Quick Links</h6>
+                <h6 class="text-white font-semibold mb-3">Quick Links</h6>
                 <ul class="text-sm space-y-1">
-                    <li><a href="#home" class="text-[#3d3333] hover:text-[#cc6a6a]">Home</a></li>
-                    <li><a href="#services" class="text-[#3d3333] hover:text-[#cc6a6a]">Services</a></li>
-                    <li><a href="#tools" class="text-[#3d3333] hover:text-[#cc6a6a]">Tools</a></li>
+                    <li><a href="#home" class="hover:text-white">Home</a></li>
+                    <li><a href="#services" class="hover:text-white">Services</a></li>
+                    <li><a href="#tools" class="hover:text-white">Tools</a></li>
                 </ul>
             </div>
             <div>
-                <h6 class="text-[#1a1414] font-semibold mb-3">Services</h6>
-                <ul class="text-sm space-y-1 text-[#3d3333]">
+                <h6 class="text-white font-semibold mb-3">Services</h6>
+                <ul class="text-sm space-y-1">
                     <li>Executive Assistance</li>
                     <li>Operations Support</li>
                     <li>Document Management</li>
                 </ul>
             </div>
             <div>
-                <h6 class="text-[#1a1414] font-semibold mb-3">Contact</h6>
-                <p class="text-sm text-[#3d3333]">airavp14@gmail.com</p>
-                <p class="text-sm text-[#3d3333]">+63 9** **** ***</p>
-                <div class="flex gap-3 mt-2 text-xl text-[#3d3333]">
-                    <i class="fas fa-envelope hover:text-[#cc6a6a] cursor-pointer"></i>
-                    <i class="fab fa-whatsapp hover:text-[#cc6a6a] cursor-pointer"></i>
-                    <i class="fab fa-linkedin-in hover:text-[#cc6a6a] cursor-pointer"></i>
+                <h6 class="text-white font-semibold mb-3">Contact</h6>
+                <p class="text-sm">airavp14@gmail.com</p>
+                <p class="text-sm">+63 9** **** ***</p>
+                <div class="flex gap-3 mt-2 text-xl">
+                    <i class="fas fa-envelope"></i>
+                    <i class="fab fa-whatsapp"></i>
+                    <i class="fab fa-linkedin-in"></i>
                 </div>
             </div>
         </div>
@@ -1361,10 +1335,9 @@
         console.log('✅ Lenis smooth scroll initialized (perfect balance mode)');
         console.log('✅ Navbar permanently fixed');
         console.log('✅ Default browser scrollbar');
-        console.log('✅ Soft Beige/Sand color scheme applied');
-        console.log('✅ virtual.png background with white text for readability');
-        console.log('✅ Removed "50+ Projects" from stats');
-        console.log('✅ Removed margin top from About section');
+        console.log('✅ Dark theme with rose accents');
+        console.log('✅ virtual.png background added to hero section');
+        console.log('✅ All sections now have glass/transparent effect');
     </script>
 
 </body>
