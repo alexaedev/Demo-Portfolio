@@ -64,6 +64,7 @@
         .bg-accent-primary { background-color: var(--accent-primary); }
         .bg-accent-secondary { background-color: var(--accent-secondary); }
 
+        /* ===== HERO SECTION WITH BACKGROUND IMAGE ===== */
         .hero-bg {
             position: relative;
             z-index: 1;
@@ -677,15 +678,8 @@
             display: flex;
         }
 
-        /* All sections with transparent/glass effect */
-        section {
-            background: transparent !important;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Section backgrounds with glass effect */
-        #about, #services, #tools, #portfolio, #contact {
+        /* ===== ALL SECTIONS WITH GLASS EFFECT ===== */
+        section:not(#home) {
             background: rgba(10, 8, 8, 0.4) !important;
             backdrop-filter: blur(8px) !important;
             -webkit-backdrop-filter: blur(8px) !important;
@@ -765,7 +759,7 @@
             #mobile-menu {
                 padding: 1rem 1.5rem;
             }
-            section {
+            section:not(#home) {
                 padding-left: 1rem !important;
                 padding-right: 1rem !important;
             }
