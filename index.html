@@ -72,23 +72,15 @@
             display: flex;
             align-items: center;
             overflow: hidden;
-        }
-
-        /* Hero background image */
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            inset: 0;
             background: url('./images/virtual.png') center center / cover no-repeat;
-            opacity: 0.15;
-            z-index: 0;
         }
 
+        /* Lighter overlay so text is readable but image shows through */
         .hero-bg::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(145deg, rgba(26, 20, 20, 0.85) 0%, rgba(34, 28, 28, 0.7) 100%);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 0;
         }
 
@@ -299,7 +291,7 @@
         }
 
         .badge {
-            background: #4a3a2a;
+            background: rgba(0, 0, 0, 0.6);
             color: #e8c39e;
             padding: 0.5rem 1.5rem;
             border-radius: 9999px;
@@ -307,6 +299,7 @@
             font-weight: 600;
             border: 1px solid rgba(232, 195, 158, 0.15);
             display: inline-block;
+            backdrop-filter: blur(8px);
         }
 
         .skills-expanding {
@@ -722,18 +715,11 @@
             #mobile-menu {
                 padding: 1rem 1.5rem;
             }
-            /* Hero background image opacity on mobile */
-            .hero-bg::before {
-                opacity: 0.08;
-            }
         }
 
         @media (max-width: 480px) {
             .hero-centered h1 {
                 font-size: 2.2rem;
-            }
-            .hero-bg::before {
-                opacity: 0.06;
             }
         }
     </style>
@@ -800,7 +786,7 @@
         <a href="#contact" class="mt-2 btn-primary text-white px-4 py-2 rounded-full text-center">Hire Me</a>
     </div>
 
-    <!-- Hero Section with virtual.png background -->
+    <!-- Hero Section with virtual.png as background -->
     <section id="home" class="hero-bg">
         <div class="hero-centered">
             <div class="badge">📋 Virtual Assistant · Admin Professional</div>
@@ -843,7 +829,7 @@
         </div>
     </section>
 
-    <!-- About Section - extra space removed -->
+    <!-- About Section -->
     <section id="about" class="py-16 bg-body">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-6">
