@@ -76,9 +76,13 @@
             background: url('./images/virtual.png') center center / cover no-repeat;
         }
 
-        /* No overlay - image is fully visible */
+        /* Light overlay for text readability */
         .hero-bg::after {
-            content: none;
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            z-index: 0;
         }
 
         .hero-centered {
@@ -94,6 +98,82 @@
             max-width: 900px;
             margin: 0 auto;
             width: 100%;
+        }
+
+        /* Hero text - WHITE for readability on dark background */
+        .hero-centered .badge {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-centered h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: #ffffff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-centered h1 .accent-primary,
+        .hero-centered h1 .accent-secondary {
+            color: #ffffff;
+        }
+
+        .hero-centered .sub {
+            font-size: clamp(1rem, 1.3vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-centered .stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.85);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hero buttons - white version for dark background */
+        .hero-centered .btn-primary {
+            background: rgba(255, 255, 255, 0.9);
+            color: #1a1414;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .hero-centered .btn-primary:hover {
+            transform: translateY(-2px);
+            background: #ffffff;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-centered .btn-outline {
+            border: 1.5px solid rgba(255, 255, 255, 0.6);
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+            backdrop-filter: blur(4px);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .hero-centered .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.9);
         }
 
         .btn-primary {
@@ -296,19 +376,6 @@
             color: var(--text-primary);
         }
 
-        .badge {
-            background: rgba(204, 106, 106, 0.12);
-            color: var(--accent-secondary);
-            padding: 0.5rem 1.5rem;
-            border-radius: 9999px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border: 1px solid rgba(204, 106, 106, 0.15);
-            display: inline-block;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-        }
-
         .skills-expanding {
             background: var(--bg-card);
             backdrop-filter: blur(12px);
@@ -444,52 +511,20 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            border: 2px solid rgba(204, 106, 106, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             background: transparent;
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             cursor: pointer;
         }
         .scroll-dot.active {
-            background: var(--accent-primary);
-            border-color: var(--accent-primary);
+            background: #ffffff;
+            border-color: #ffffff;
             transform: scale(1.4);
-            box-shadow: 0 0 20px rgba(204, 106, 106, 0.15);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
         .scroll-dot:hover {
-            border-color: var(--accent-primary);
+            border-color: #ffffff;
             transform: scale(1.2);
-        }
-
-        .hero-centered .badge {
-            margin-bottom: 1.5rem;
-        }
-        .hero-centered h1 {
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            font-weight: 700;
-            line-height: 1.05;
-            letter-spacing: -0.03em;
-        }
-        .hero-centered .sub {
-            font-size: clamp(1rem, 1.3vw, 1.3rem);
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 1.5rem auto 0;
-        }
-        .hero-centered .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-        .hero-centered .stats {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-            margin-top: 2rem;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
         }
 
         .intro-section {
@@ -834,14 +869,14 @@
         <a href="#contact" class="mt-2 btn-primary text-white px-4 py-2 rounded-full text-center">Hire Me</a>
     </div>
 
-    <!-- Hero Section with virtual.png as background (no overlay) -->
+    <!-- Hero Section with virtual.png as background -->
     <section id="home" class="hero-bg">
         <div class="hero-centered">
             <div class="badge">📋 Virtual Assistant · Admin Professional</div>
             <h1>
                 Your Reliable<br>
-                <span style="color:var(--accent-primary);">Virtual Assistant</span><br>
-                <span style="color:var(--accent-secondary);">Admin &amp; Operations</span>
+                <span class="accent-primary">Virtual Assistant</span><br>
+                <span class="accent-secondary">Admin &amp; Operations</span>
             </h1>
             <p class="sub">
                 Helping businesses stay organized through dependable administrative support, accurate task management, and a proactive approach to everyday operations.
@@ -876,7 +911,7 @@
         </div>
     </section>
 
-    <!-- About Section - margin top removed -->
+    <!-- About Section -->
     <section id="about" class="py-16">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center">
@@ -1327,7 +1362,7 @@
         console.log('✅ Navbar permanently fixed');
         console.log('✅ Default browser scrollbar');
         console.log('✅ Soft Beige/Sand color scheme applied');
-        console.log('✅ virtual.png background fully visible (no overlay)');
+        console.log('✅ virtual.png background with white text for readability');
         console.log('✅ Removed "50+ Projects" from stats');
         console.log('✅ Removed margin top from About section');
     </script>
