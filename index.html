@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Alexa Reyes - Graphic Designer &amp; Management</title>
+    <title>Alexa Reyes · Virtual Assistant &amp; Admin Professional</title>
 
     <!-- ===== FAVICON ===== -->
     <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAA/hJREFUWEfFl3toFVUQxr+ZuXtvzCMxJNGQPlCCUor6IL1Eem+uvbk3pCgoKBLzD18UgpCgqJBHSYE/sDwU/GcQKX1QYpFICCL6R4hZCpWpYIggVEgL3Xm4c3w53Z3dPTu3uXcXBA9c9pyZb85vvtk5s8yZ/RdF9p+sfYz9N/vfgaJbXbpAeQFEkbdr1x/lvWOYk/c3M3Pu3VtxXG/lDUYYqcbGXqUoVLE2SSqAqPsAJgLO43bcjCwRMruudY+WuBvDswBGEhFzAMM1rRtKVhg7TQRwm2EYY5uamh5Xw9UdC1VVfRVF+b4MqK6u/roCwBVNo30Gq3CRJMEcMrlK+/cdrLW1NQQA2vvCwS49zTz85HVxK9LQU3wMBh6uBLQbRV/tFHHK9Kmrq+s++oy+oebm5jyDQHv7lTXKl8XuxUeXo8O2t+OK6ysB4rFnQy4Z0HHGOKbO/jQX2hV1BRKJRKVTp05N4O0H9c+F5IL3w66yPgzBikwmE0hk2iQDAADbtm3rZ2BgQC41AnruoN5PpgdWV1cbVF1dnSAiAKi2tvaTuro6CQBgNps/khnjAwsKCnS9sDCZiCCK4hSb4C9fvryLze2sKcByH0p1CBEOud3u3sLCwmn2HnR2dn6YTCa1hDsqAhiAgNdLLuPj4z+PjIxUGwYwKyW9T5yO6nR5Wl1dbSwtLTWh63p3T0/POwBQVTXTxUQLh1hRUTEtEAgI4+Pji5LJpKaqaj2AYLP3FVVVC4PB4GdM8VGj0Ug1Nzd/Ulpa6uIf79y50wMAHJjgY2tWrVpVVFRUZAAYSyaT3e3t7UcBYKKjo8Pf3NxMRbfJBNHc3Cynpqb2VFVVFba2tibi8bgJ2UoDTCaT26PR6PfMr0lEMjIysr21tTWxvLzcJAAmRKPRXXV1dQvZ3Hl+MNWePXveJqKJtL0TBAChUCjY39+/BQBKSkqWATgBoC6ZTJqPRyKRwG+88tHRUTUcDu9oaWnZyiZHLW1vUAzQ399v2tjY+HhXV9c8ALAs6xgAj4uJ3TWk+WT9+/F7nLwwBvwZ5h7HtJhMHk/gUK5hb1WBMskbBMDTzMw8AqArLR4AZD6KZ7a/7VgxpY1a5iZgx+JsE5vVh+3gZ0X2qyWzdN+HrT1DpDzgAOgNq0l3KkArDacN2Lg47zNHwgHAlC5mhggkS4OZiXEdcBhw+HEHdipXAs4UgA0rBcYADACc50KoxV6N9VxW+nN7nzPrS5DmAkBJSYlCROTxeBq6u7vH+B1FRe76ysrKIwA8XV1di9TIbEDhwPj4uJRKpXRd10+iL1sQEhH6+vrk0tLS+UTkISJ1BWizBCKi+vr6hsrKyuUHDx48BSClxrMBIqJYLLYjFovdVhDvKM5o42rxX3V1dWU6nYbn/z7jH7n8+iQs/JYYAAAAAElFTkSuQmCC">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -43,10 +43,10 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.35;
+            opacity: 0.3;
         }
 
-        /* ===== CENTER SLIDE ANIMATIONS (from Paul David portfolio) ===== */
+        /* ===== CENTER SLIDE ANIMATIONS ===== */
         .slide-center {
             opacity: 0;
             transform: translateX(-60px) scale(0.95);
@@ -80,35 +80,75 @@
             transform: translateY(0) scale(1);
         }
 
-        /* Stagger children - slide from center (matching Paul David) */
-        .stagger-center > * {
+        /* Stagger children */
+        .stagger-center>* {
             opacity: 0;
             transform: translateX(-40px) scale(0.95);
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .stagger-center.visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(2) { transition-delay: 0.10s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(3) { transition-delay: 0.15s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(4) { transition-delay: 0.20s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(5) { transition-delay: 0.25s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(6) { transition-delay: 0.30s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(7) { transition-delay: 0.35s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(8) { transition-delay: 0.40s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(9) { transition-delay: 0.45s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(10) { transition-delay: 0.50s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(11) { transition-delay: 0.55s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(12) { transition-delay: 0.60s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(13) { transition-delay: 0.65s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(14) { transition-delay: 0.70s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(15) { transition-delay: 0.75s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(16) { transition-delay: 0.80s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(17) { transition-delay: 0.85s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(18) { transition-delay: 0.90s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(19) { transition-delay: 0.95s; opacity: 1; transform: translateX(0) scale(1); }
-        .stagger-center.visible > *:nth-child(20) { transition-delay: 1.00s; opacity: 1; transform: translateX(0) scale(1); }
+        .stagger-center.visible>*:nth-child(1) {
+            transition-delay: 0.05s;
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+        .stagger-center.visible>*:nth-child(2) {
+            transition-delay: 0.10s;
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+        .stagger-center.visible>*:nth-child(3) {
+            transition-delay: 0.15s;
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+        .stagger-center.visible>*:nth-child(4) {
+            transition-delay: 0.20s;
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+        .stagger-center.visible>*:nth-child(5) {
+            transition-delay: 0.25s;
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+        .stagger-center.visible>*:nth-child(6) {
+            transition-delay: 0.30s;
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+        .stagger-center.visible>*:nth-child(7) {
+            transition-delay: 0.35s;
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+        .stagger-center.visible>*:nth-child(8) {
+            transition-delay: 0.40s;
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+        .stagger-center.visible>*:nth-child(9) {
+            transition-delay: 0.45s;
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+        .stagger-center.visible>*:nth-child(10) {
+            transition-delay: 0.50s;
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+        .stagger-center.visible>*:nth-child(11) {
+            transition-delay: 0.55s;
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+        .stagger-center.visible>*:nth-child(12) {
+            transition-delay: 0.60s;
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
 
-        /* ===== STATS / GRAPHS SECTION ===== */
+        /* ===== STATS SECTION ===== */
         .stats-visual-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -235,16 +275,71 @@
             width: var(--level);
         }
 
+        /* ===== SERVICES ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 35px 28px;
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(102, 126, 234, 0.25);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.08);
+        }
+
+        .service-card .service-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #c0c0e0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .service-card .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .service-card .service-tag {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
         /* ===== PROJECTS ===== */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 30px;
             margin-top: 20px;
-        }
-
-        .projects-grid:has(.project-card:last-child:nth-child(2)) {
-            justify-content: center;
         }
 
         .project-card {
@@ -265,16 +360,6 @@
             transform: translateY(-10px) scale(1.02);
             border-color: rgba(102, 126, 234, 0.3);
             box-shadow: 0 10px 40px rgba(102, 126, 234, 0.1);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .project-image-wrapper {
@@ -331,15 +416,10 @@
             animation: pulseGlow 2s ease-in-out infinite;
         }
 
-        .project-image-wrapper .gallery-hint .icon {
-            font-size: 0.9rem;
-        }
-
         .project-image-wrapper .click-overlay {
             position: absolute;
             inset: 0;
             z-index: 4;
-            background: rgba(102, 126, 234, 0);
             border-radius: 12px;
             transition: background 0.3s ease;
             display: flex;
@@ -370,34 +450,17 @@
             transform: scale(1);
         }
 
-        .project-icon {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
-
         .project-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
             color: #ffffff;
-        }
-
-        .project-card h3 .h3-icon {
-            font-size: 1.8rem;
         }
 
         .project-card p {
             color: #c0c0e0;
             line-height: 1.7;
             margin-bottom: 15px;
-        }
-
-        .project-card .project-link {
-            margin: 12px 0;
         }
 
         .project-tags {
@@ -431,6 +494,11 @@
             background: rgba(34, 197, 94, 0.25);
         }
 
+        .project-tag.admin {
+            background: rgba(102, 126, 234, 0.12);
+            color: #667eea;
+        }
+
         /* ===== GALLERY MODAL ===== */
         .gallery-modal {
             display: none;
@@ -454,13 +522,14 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .gallery-modal,
-        .gallery-modal * {
-            cursor: default !important;
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .gallery-modal .close-btn {
@@ -545,7 +614,6 @@
         .gallery-modal .nav-btn.prev {
             left: -30px;
         }
-
         .gallery-modal .nav-btn.next {
             right: -30px;
         }
@@ -842,17 +910,7 @@
             background-clip: text;
         }
 
-        footer a {
-            color: #667eea;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #764ba2;
-        }
-
-        /* ----- RESET & BASE (continued) ----- */
+        /* ----- SECTION DIVIDERS ----- */
         .section-divider {
             width: 100%;
             max-width: 1200px;
@@ -911,12 +969,6 @@
             font-size: 1.1rem;
             margin-bottom: 40px;
             font-weight: 400;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
         }
 
         /* ===== NAVBAR ===== */
@@ -1326,19 +1378,6 @@
             overflow: hidden;
         }
 
-        .about-image::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .about-image:hover::before {
-            opacity: 1;
-        }
-
         .about-image:hover {
             transform: scale(1.02);
             border-color: rgba(102, 126, 234, 0.3);
@@ -1395,7 +1434,7 @@
             font-weight: 500;
         }
 
-        /* ===== EXPERIENCE SECTION ===== */
+        /* ===== EXPERIENCE ===== */
         .experience-timeline {
             display: flex;
             flex-direction: column;
@@ -1420,33 +1459,6 @@
             transform: translateX(6px) scale(1.01);
             border-color: rgba(102, 126, 234, 0.2);
             box-shadow: 0 8px 30px rgba(102, 126, 234, 0.05);
-        }
-
-        .exp-card .click-label {
-            position: absolute;
-            top: 12px;
-            right: 16px;
-            font-size: 0.7rem;
-            color: #667eea;
-            background: rgba(102, 126, 234, 0.1);
-            padding: 4px 14px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            border: 1px solid rgba(102, 126, 234, 0.1);
-            transition: all 0.3s ease;
-            z-index: 2;
-        }
-
-        .exp-card .click-label i {
-            font-size: 0.6rem;
-        }
-
-        .exp-card:hover .click-label {
-            background: rgba(102, 126, 234, 0.2);
-            border-color: rgba(102, 126, 234, 0.3);
-            box-shadow: 0 0 20px rgba(102, 126, 234, 0.1);
         }
 
         .exp-icon {
@@ -1531,32 +1543,6 @@
             box-shadow: 0 8px 30px rgba(102, 126, 234, 0.05);
         }
 
-        .cert-card .click-label {
-            position: absolute;
-            top: 8px;
-            right: 12px;
-            font-size: 0.6rem;
-            color: #667eea;
-            background: rgba(102, 126, 234, 0.08);
-            padding: 2px 10px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            border: 1px solid rgba(102, 126, 234, 0.06);
-            transition: all 0.3s ease;
-            z-index: 2;
-        }
-
-        .cert-card .click-label i {
-            font-size: 0.5rem;
-        }
-
-        .cert-card:hover .click-label {
-            background: rgba(102, 126, 234, 0.15);
-            border-color: rgba(102, 126, 234, 0.2);
-        }
-
         .cert-icon {
             font-size: 2.6rem;
             margin-bottom: 8px;
@@ -1592,12 +1578,6 @@
             .hero-image .profile-wrapper {
                 width: 300px;
                 height: 300px;
-            }
-            .exp-card .click-label {
-                display: none;
-            }
-            .cert-card .click-label {
-                display: none;
             }
         }
 
@@ -1678,17 +1658,11 @@
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
             .about-stats {
                 grid-template-columns: 1fr 1fr;
-            }
-            .project-image-wrapper {
-                height: 180px;
-            }
-            .project-image-wrapper .stacked-image:nth-child(2) {
-                transform: translate(6px, 6px) scale(0.95);
-            }
-            .project-image-wrapper .stacked-image:nth-child(3) {
-                transform: translate(12px, 12px) scale(0.90);
             }
             .gallery-modal .modal-image-container {
                 max-width: 95%;
@@ -1724,25 +1698,8 @@
                 width: 50px;
                 height: 40px;
             }
-            .gallery-modal .counter {
-                bottom: -40px;
-                font-size: 0.8rem;
-                padding: 6px 16px;
-            }
-            .exp-card {
-                padding: 20px 16px;
-            }
-            .exp-content h3 {
-                font-size: 1.1rem;
-            }
-            .exp-content .exp-desc ul li {
-                font-size: 0.85rem;
-            }
             .stats-visual-grid {
                 grid-template-columns: 1fr 1fr;
-            }
-            .stat-visual-card .stat-number {
-                font-size: 2.2rem;
             }
             .cert-grid {
                 grid-template-columns: 1fr 1fr;
@@ -1753,12 +1710,6 @@
             }
             body {
                 cursor: auto;
-            }
-            .gallery-modal {
-                cursor: auto !important;
-            }
-            .gallery-modal * {
-                cursor: auto !important;
             }
         }
 
@@ -1802,92 +1753,6 @@
             .cert-grid {
                 grid-template-columns: 1fr;
             }
-            .stat-visual-card .stat-number {
-                font-size: 2rem;
-            }
-        }
-
-        /* ===== DEMO POPUP ===== */
-        .demo-popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
-            z-index: 99999;
-            justify-content: center;
-            align-items: center;
-            animation: fadeIn 0.3s ease;
-            cursor: auto !important;
-        }
-
-        .demo-popup.active {
-            display: flex;
-        }
-
-        .demo-popup * {
-            cursor: auto !important;
-        }
-
-        .demo-popup-content {
-            background: #1a1a2e;
-            border: 1px solid rgba(102, 126, 234, 0.15);
-            border-radius: 24px;
-            padding: 40px 50px;
-            max-width: 420px;
-            text-align: center;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
-            animation: popIn 0.3s ease;
-        }
-
-        @keyframes popIn {
-            from {
-                transform: scale(0.9);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .demo-popup-content .popup-icon {
-            font-size: 3.5rem;
-            margin-bottom: 12px;
-        }
-
-        .demo-popup-content h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 8px;
-        }
-
-        .demo-popup-content p {
-            color: #c0c0e0;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .demo-popup-content .popup-btn {
-            padding: 10px 40px;
-            border-radius: 50px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: #fff;
-            border: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer !important;
-            transition: all 0.3s ease;
-        }
-
-        .demo-popup-content .popup-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
         }
 
         /* ===== AIRPLANE CURSOR (desktop only) ===== */
@@ -1907,7 +1772,7 @@
             }
 
             .airplane-cursor::after {
-                content: '✏️';
+                content: '📋';
                 display: block;
                 animation: airplanePulse 2s ease-in-out infinite;
             }
@@ -1955,29 +1820,6 @@
                     transform: scale(0) translate(var(--tx), var(--ty));
                 }
             }
-
-            .gallery-modal {
-                cursor: auto !important;
-            }
-            .gallery-modal * {
-                cursor: auto !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .airplane-cursor,
-            .trail-container {
-                display: none;
-            }
-            body {
-                cursor: auto;
-            }
-            .gallery-modal {
-                cursor: auto !important;
-            }
-            .gallery-modal * {
-                cursor: auto !important;
-            }
         }
     </style>
 </head>
@@ -1999,6 +1841,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#certificates">Certificates</a></li>
@@ -2017,27 +1860,28 @@
     <section id="home">
         <div class="hero-wrapper">
             <div class="hero-content">
-                <div class="hero-badge slide-center-up">🎨 Welcome to my portfolio</div>
+                <div class="hero-badge slide-center-up">📋 Welcome to my portfolio</div>
                 <h1 class="slide-center">
                     I'm <span class="highlight">Alexa Reyes</span>
                 </h1>
-                <p class="subtitle slide-center" style="transition-delay: 0.1s;">Graphic Designer | Creative Lead | Project Manager</p>
+                <p class="subtitle slide-center" style="transition-delay: 0.1s;">Virtual Assistant | Admin Specialist | Operations Support</p>
                 <p class="description slide-center" style="transition-delay: 0.2s;">
-                    I turn ideas into visuals that connect, communicate, and convert. With expertise in
-                    <strong>brand identity, UI/UX design, and creative direction</strong>, I help businesses
-                    build a strong visual presence. I lead projects with clarity, collaborate with purpose,
-                    and deliver work that resonates. Whether it's a brand from scratch or a campaign that
-                    stands out — I bring strategy, creativity, and execution together.
+                    I help businesses run smoothly by providing <strong>reliable administrative support</strong>,
+                    managing day-to-day operations, and keeping everything organized. With a strong background in
+                    <strong>executive assistance, project coordination, and document management</strong>,
+                    I ensure that tasks are handled efficiently so you can focus on what matters most.
+                    Whether it's scheduling, email management, data entry, or process documentation —
+                    I bring structure, reliability, and a proactive approach to every task.
                 </p>
                 <div class="hero-buttons slide-center" style="transition-delay: 0.3s;">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#services" class="btn btn-primary">My Services</a>
                     <a href="#contact" class="btn btn-secondary">Let's Connect</a>
                 </div>
             </div>
 
             <div class="hero-image slide-center-right">
                 <div class="profile-wrapper">
-                    <img src="./images/alexa.jpg" alt="Alexa Reyes" class="profile-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:8rem;text-align:center;line-height:1;\'>🎨</div>';">
+                    <img src="./images/alexa.jpg" alt="Alexa Reyes" class="profile-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'font-size:8rem;text-align:center;line-height:1;\'>📋</div>';">
                 </div>
             </div>
         </div>
@@ -2056,31 +1900,31 @@
     <!-- ===== ABOUT SECTION ===== -->
     <section id="about">
         <h2 class="section-title slide-center-up">About Me</h2>
-        <p class="section-sub slide-center-up" style="transition-delay: 0.1s;">Designer, leader, problem-solver</p>
+        <p class="section-sub slide-center-up" style="transition-delay: 0.1s;">Organized, reliable, and detail-oriented</p>
 
         <div class="about-grid">
-            <div class="about-image slide-center">🎨</div>
+            <div class="about-image slide-center">📋</div>
             <div class="about-text">
                 <p class="slide-center-right">
-                    I'm <strong>Alexa Reyes</strong> — a Graphic Designer and Creative Lead with a passion for
-                    building brands and guiding teams. I've worked across <strong>brand identity</strong>,
-                    <strong>digital design</strong>, and <strong>project management</strong>, helping companies
-                    tell their story through strong visuals.
+                    I'm <strong>Alexa Reyes</strong> — a Virtual Assistant and Administrative Specialist with a passion for
+                    helping businesses stay organized and efficient. I've worked across <strong>executive support</strong>,
+                    <strong>operations management</strong>, and <strong>project coordination</strong>, providing
+                    seamless administrative solutions that keep teams running smoothly.
                 </p>
                 <p class="slide-center-right" style="transition-delay: 0.1s;">
-                    My approach is simple: understand the goal, design with intention, and deliver results.
-                    I'm comfortable leading creative teams, managing timelines, and collaborating with clients
-                    to turn ideas into polished, impactful work.
+                    My approach is simple: understand your workflow, anticipate needs, and deliver reliable support.
+                    I'm comfortable managing calendars, handling communications, organizing documents, and coordinating
+                    projects. I bring a proactive mindset and a commitment to excellence in every task.
                 </p>
 
                 <div class="about-stats stagger-center">
                     <div class="stat">
                         <div class="stat-number">4+</div>
-                        <div class="stat-label">Years Experience</div>
+                        <div class="stat-label">Years Admin Experience</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">50+</div>
-                        <div class="stat-label">Projects Delivered</div>
+                        <div class="stat-label">Projects Supported</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">100%</div>
@@ -2097,28 +1941,28 @@
 
             <div class="stats-visual-grid stagger-center">
                 <div class="stat-visual-card">
-                    <span class="stat-icon">🎯</span>
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">Client Satisfaction Rate</div>
-                    <div class="stat-bar-wrapper"><div class="stat-bar-fill" style="--fill:98%"></div></div>
+                    <span class="stat-icon">✅</span>
+                    <div class="stat-number">99%</div>
+                    <div class="stat-label">Task Accuracy Rate</div>
+                    <div class="stat-bar-wrapper"><div class="stat-bar-fill" style="--fill:99%"></div></div>
                 </div>
                 <div class="stat-visual-card">
                     <span class="stat-icon">⏱️</span>
-                    <div class="stat-number">95%</div>
+                    <div class="stat-number">98%</div>
                     <div class="stat-label">On-Time Delivery</div>
-                    <div class="stat-bar-wrapper"><div class="stat-bar-fill" style="--fill:95%"></div></div>
+                    <div class="stat-bar-wrapper"><div class="stat-bar-fill" style="--fill:98%"></div></div>
                 </div>
                 <div class="stat-visual-card">
                     <span class="stat-icon">🔄</span>
-                    <div class="stat-number">87%</div>
+                    <div class="stat-number">90%</div>
                     <div class="stat-label">Repeat Clients</div>
-                    <div class="stat-bar-wrapper"><div class="stat-bar-fill" style="--fill:87%"></div></div>
+                    <div class="stat-bar-wrapper"><div class="stat-bar-fill" style="--fill:90%"></div></div>
                 </div>
                 <div class="stat-visual-card">
-                    <span class="stat-icon">📈</span>
-                    <div class="stat-number">92%</div>
+                    <span class="stat-icon">📊</span>
+                    <div class="stat-number">95%</div>
                     <div class="stat-label">Project Success Rate</div>
-                    <div class="stat-bar-wrapper"><div class="stat-bar-fill" style="--fill:92%"></div></div>
+                    <div class="stat-bar-wrapper"><div class="stat-bar-fill" style="--fill:95%"></div></div>
                 </div>
             </div>
         </div>
@@ -2135,37 +1979,35 @@
         <p class="section-sub slide-center-up" style="transition-delay: 0.1s;">Where I've contributed and made an impact</p>
 
         <div class="experience-timeline stagger-center">
-            <div class="exp-card" onclick="showDemoPopup()">
-                <span class="click-label"><i class="fas fa-arrow-right"></i> Click to view</span>
+            <div class="exp-card">
                 <div class="exp-icon">🏢</div>
                 <div class="exp-content">
-                    <h3>Creative Lead &amp; Graphic Designer</h3>
-                    <div class="exp-company">Studio 8 Creative Agency</div>
-                    <span class="exp-year">📅 2022 — 2025</span>
+                    <h3>Executive Virtual Assistant</h3>
+                    <div class="exp-company">Remote Solutions Inc.</div>
+                    <span class="exp-year">📅 2023 — Present</span>
                     <div class="exp-desc">
                         <ul>
-                            <li>Led the creative direction for 30+ branding projects across various industries.</li>
-                            <li>Managed a team of 5 designers, ensuring timely delivery and high-quality output.</li>
-                            <li>Developed comprehensive brand identities including logos, typography, and color palettes.</li>
-                            <li>Collaborated with clients to translate their vision into impactful visual stories.</li>
+                            <li>Manage calendars, schedule meetings, and coordinate travel arrangements for executives.</li>
+                            <li>Handle email correspondence, draft communications, and maintain organized filing systems.</li>
+                            <li>Prepare reports, presentations, and documentation for client meetings and internal reviews.</li>
+                            <li>Support project coordination and task management across multiple teams and departments.</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="exp-card" onclick="showDemoPopup()">
-                <span class="click-label"><i class="fas fa-arrow-right"></i> Click to view</span>
-                <div class="exp-icon">📱</div>
+            <div class="exp-card">
+                <div class="exp-icon">📊</div>
                 <div class="exp-content">
-                    <h3>UI/UX Designer &amp; Project Coordinator</h3>
-                    <div class="exp-company">Digital Wave Solutions</div>
-                    <span class="exp-year">📅 2020 — 2022</span>
+                    <h3>Administrative Operations Coordinator</h3>
+                    <div class="exp-company">Global Business Support</div>
+                    <span class="exp-year">📅 2020 — 2023</span>
                     <div class="exp-desc">
                         <ul>
-                            <li>Designed user-friendly interfaces for 15+ web and mobile applications.</li>
-                            <li>Coordinated project timelines, budgets, and client communications for design teams.</li>
-                            <li>Conducted user research and usability testing to improve design outcomes.</li>
-                            <li>Created wireframes, prototypes, and high-fidelity mockups using Figma and Adobe XD.</li>
+                            <li>Streamlined office operations and implemented efficient document management systems.</li>
+                            <li>Managed vendor relationships, processed invoices, and tracked budget expenses.</li>
+                            <li>Coordinated team communications and maintained organized project documentation.</li>
+                            <li>Provided administrative support to 15+ team members across multiple departments.</li>
                         </ul>
                     </div>
                 </div>
@@ -2178,6 +2020,63 @@
         <div class="divider-line"></div>
     </div>
 
+    <!-- ===== SERVICES SECTION ===== -->
+    <section id="services">
+        <h2 class="section-title slide-center-up">My Services</h2>
+        <p class="section-sub slide-center-up" style="transition-delay: 0.1s;">Comprehensive administrative support for your business</p>
+
+        <div class="services-grid stagger-center">
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>Executive Assistance</h3>
+                <p>Calendar management, email handling, travel coordination, and executive-level communication support to keep you organized and focused.</p>
+                <div class="service-tags">
+                    <span class="service-tag">Calendar Management</span>
+                    <span class="service-tag">Email Support</span>
+                    <span class="service-tag">Travel Coordination</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Operations Support</h3>
+                <p>Process documentation, project coordination, vendor management, and operational workflow optimization to keep your business running smoothly.</p>
+                <div class="service-tags">
+                    <span class="service-tag">Process Documentation</span>
+                    <span class="service-tag">Project Coordination</span>
+                    <span class="service-tag">Workflow Optimization</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📁</div>
+                <h3>Document &amp; Data Management</h3>
+                <p>Organized filing systems, data entry, spreadsheet management, and document formatting to ensure information is accessible and accurate.</p>
+                <div class="service-tags">
+                    <span class="service-tag">Data Entry</span>
+                    <span class="service-tag">Filing Systems</span>
+                    <span class="service-tag">Document Formatting</span>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📧</div>
+                <h3>Communication &amp; Coordination</h3>
+                <p>Email management, meeting coordination, note-taking, and team communication support to keep everyone aligned and informed.</p>
+                <div class="service-tags">
+                    <span class="service-tag">Meeting Coordination</span>
+                    <span class="service-tag">Note-Taking</span>
+                    <span class="service-tag">Team Communication</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DIVIDER 4 ===== -->
+    <div class="section-divider">
+        <div class="divider-line"></div>
+    </div>
+
     <!-- ===== SKILLS SECTION ===== -->
     <section id="skills">
         <h2 class="section-title slide-center-up">My Skills</h2>
@@ -2185,69 +2084,69 @@
 
         <div class="skills-grid stagger-center">
             <div class="skill-card">
-                <div class="skill-icon">🎨</div>
-                <div class="skill-name">Graphic Design</div>
+                <div class="skill-icon">📋</div>
+                <div class="skill-name">Executive Support</div>
                 <div class="skill-level"><div class="skill-level-bar" style="--level: 95%"></div></div>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">🖌️</div>
-                <div class="skill-name">Adobe Photoshop</div>
+                <div class="skill-icon">📊</div>
+                <div class="skill-name">Project Coordination</div>
                 <div class="skill-level"><div class="skill-level-bar" style="--level: 90%"></div></div>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">🎯</div>
-                <div class="skill-name">Figma</div>
-                <div class="skill-level"><div class="skill-level-bar" style="--level: 85%"></div></div>
+                <div class="skill-icon">📁</div>
+                <div class="skill-name">Document Management</div>
+                <div class="skill-level"><div class="skill-level-bar" style="--level: 92%"></div></div>
             </div>
             <div class="skill-card">
-                <div class="skill-icon">🖍️</div>
-                <div class="skill-name">Canva</div>
-                <div class="skill-level"><div class="skill-level-bar" style="--level: 90%"></div></div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">📐</div>
-                <div class="skill-name">Brand Identity</div>
-                <div class="skill-level"><div class="skill-level-bar" style="--level: 88%"></div></div>
+                <div class="skill-icon">📧</div>
+                <div class="skill-name">Email &amp; Calendar Management</div>
+                <div class="skill-level"><div class="skill-level-bar" style="--level: 95%"></div></div>
             </div>
             <div class="skill-card">
                 <div class="skill-icon">📊</div>
-                <div class="skill-name">Project Management</div>
-                <div class="skill-level"><div class="skill-level-bar" style="--level: 85%"></div></div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">👥</div>
-                <div class="skill-name">Team Leadership</div>
-                <div class="skill-level"><div class="skill-level-bar" style="--level: 80%"></div></div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">📱</div>
-                <div class="skill-name">UI/UX Design</div>
-                <div class="skill-level"><div class="skill-level-bar" style="--level: 78%"></div></div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">✍️</div>
-                <div class="skill-name">Content Creation</div>
-                <div class="skill-level"><div class="skill-level-bar" style="--level: 85%"></div></div>
-            </div>
-            <div class="skill-card">
-                <div class="skill-icon">🤖</div>
-                <div class="skill-name">AI Tools</div>
-                <div class="skill-level"><div class="skill-level-bar" style="--level: 80%"></div></div>
+                <div class="skill-name">Excel &amp; Spreadsheets</div>
+                <div class="skill-level"><div class="skill-level-bar" style="--level: 88%"></div></div>
             </div>
             <div class="skill-card">
                 <div class="skill-icon">📝</div>
-                <div class="skill-name">Copywriting</div>
-                <div class="skill-level"><div class="skill-level-bar" style="--level: 75%"></div></div>
+                <div class="skill-name">Data Entry</div>
+                <div class="skill-level"><div class="skill-level-bar" style="--level: 96%"></div></div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🗂️</div>
+                <div class="skill-name">Filing &amp; Organization</div>
+                <div class="skill-level"><div class="skill-level-bar" style="--level: 94%"></div></div>
             </div>
             <div class="skill-card">
                 <div class="skill-icon">💬</div>
                 <div class="skill-name">Client Relations</div>
+                <div class="skill-level"><div class="skill-level-bar" style="--level: 92%"></div></div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">🤖</div>
+                <div class="skill-name">AI Tools (ChatGPT, Claude)</div>
+                <div class="skill-level"><div class="skill-level-bar" style="--level: 85%"></div></div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">📱</div>
+                <div class="skill-name">Google Workspace</div>
                 <div class="skill-level"><div class="skill-level-bar" style="--level: 90%"></div></div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">💻</div>
+                <div class="skill-name">Microsoft Office Suite</div>
+                <div class="skill-level"><div class="skill-level-bar" style="--level: 92%"></div></div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">📋</div>
+                <div class="skill-name">Process Documentation</div>
+                <div class="skill-level"><div class="skill-level-bar" style="--level: 88%"></div></div>
             </div>
         </div>
     </section>
 
-    <!-- ===== DIVIDER 4 ===== -->
+    <!-- ===== DIVIDER 5 ===== -->
     <div class="section-divider">
         <div class="divider-line"></div>
     </div>
@@ -2258,75 +2157,48 @@
         <p class="section-sub slide-center-up" style="transition-delay: 0.1s;">Work that speaks for itself</p>
 
         <div class="projects-grid stagger-center">
-            <a href="#" class="project-card">
-                <div class="project-image" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 1px solid rgba(255,255,255,0.06);">
-                    🏷️
+            <div class="project-card">
+                <div class="project-image-wrapper" style="background: rgba(102, 126, 234, 0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 4rem; border: 1px solid rgba(255,255,255,0.06);">
+                    📋
                 </div>
-                <h3><span class="h3-icon">🏷️</span> Brand Identity Design</h3>
-                <p>Full brand identity for a startup — including logo, color palette, typography, and comprehensive brand guidelines.</p>
+                <h3>Executive Support System</h3>
+                <p>Developed a comprehensive executive support system including calendar management, email filtering, and meeting coordination processes for a fast-growing startup.</p>
                 <div class="project-tags">
-                    <span class="project-tag">Branding</span>
-                    <span class="project-tag">Logo Design</span>
+                    <span class="project-tag admin">Executive Support</span>
+                    <span class="project-tag admin">Calendar Management</span>
                     <span class="project-tag live">Completed</span>
                 </div>
-            </a>
+            </div>
 
-            <a href="#" class="project-card" onclick="openGallery('socialMedia'); return false;">
-                <div class="project-image-wrapper">
-                    <img src="./images/design1.png" alt="Social Media Campaign" class="stacked-image" onerror="this.style.display='none'">
-                    <img src="./images/design2.png" alt="Social Media Campaign" class="stacked-image" onerror="this.style.display='none'">
-                    <div class="click-overlay">
-                        <span class="click-text">🖼️ View Gallery</span>
-                    </div>
-                    <div class="gallery-hint" id="socialMedia-hint">
-                        <span class="icon">🖼️</span> <span class="photo-count">2</span> photos
-                    </div>
+            <div class="project-card">
+                <div class="project-image-wrapper" style="background: rgba(102, 126, 234, 0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 4rem; border: 1px solid rgba(255,255,255,0.06);">
+                    📊
                 </div>
-                <h3><span class="h3-icon">📱</span> Social Media Campaign</h3>
-                <p>Visual content for a lifestyle brand — posts, stories, and ad creatives that drive engagement and build community.</p>
+                <h3>Operations Workflow Optimization</h3>
+                <p>Streamlined operational workflows for a mid-sized company, implementing efficient document management systems and process documentation.</p>
                 <div class="project-tags">
-                    <span class="project-tag">Social Media</span>
-                    <span class="project-tag">Content Creation</span>
-                    <span class="project-tag live">Live</span>
-                </div>
-            </a>
-
-            <a href="#" class="project-card" onclick="openGallery('uiDesign'); return false;">
-                <div class="project-image-wrapper">
-                    <img src="./images/demo1.jpg" alt="UI Design" class="stacked-image" onerror="this.style.display='none'">
-                    <img src="./images/Demo2.jpg" alt="UI Design" class="stacked-image" onerror="this.style.display='none'">
-                    <div class="click-overlay">
-                        <span class="click-text">🖼️ View Gallery</span>
-                    </div>
-                    <div class="gallery-hint" id="uiDesign-hint">
-                        <span class="icon">🖼️</span> <span class="photo-count">2</span> photos
-                    </div>
-                </div>
-                <h3><span class="h3-icon">📊</span> Web &amp; App UI Design</h3>
-                <p>Clean, intuitive interfaces for web and mobile — focused on user experience, accessibility, and visual appeal.</p>
-                <div class="project-tags">
-                    <span class="project-tag">UI/UX</span>
-                    <span class="project-tag">Figma</span>
-                    <span class="project-tag">Prototyping</span>
-                </div>
-            </a>
-
-            <a href="#" class="project-card">
-                <div class="project-image" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); display: flex; align-items: center; justify-content: center; font-size: 3rem; border: 1px solid rgba(255,255,255,0.06);">
-                    📦
-                </div>
-                <h3><span class="h3-icon">📦</span> Marketing Collateral</h3>
-                <p>Print and digital materials — brochures, flyers, business cards, and presentation decks that reinforce brand identity.</p>
-                <div class="project-tags">
-                    <span class="project-tag">Print Design</span>
-                    <span class="project-tag">Marketing</span>
+                    <span class="project-tag admin">Operations</span>
+                    <span class="project-tag admin">Workflow Optimization</span>
                     <span class="project-tag live">Completed</span>
                 </div>
-            </a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image-wrapper" style="background: rgba(102, 126, 234, 0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 4rem; border: 1px solid rgba(255,255,255,0.06);">
+                    📁
+                </div>
+                <h3>Document Management System</h3>
+                <p>Designed and implemented a digital filing system that improved document retrieval time by 70% for a team of 20+ employees.</p>
+                <div class="project-tags">
+                    <span class="project-tag admin">Document Management</span>
+                    <span class="project-tag admin">Filing System</span>
+                    <span class="project-tag live">Completed</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- ===== DIVIDER 5 ===== -->
+    <!-- ===== DIVIDER 6 ===== -->
     <div class="section-divider">
         <div class="divider-line"></div>
     </div>
@@ -2337,34 +2209,30 @@
         <p class="section-sub slide-center-up" style="transition-delay: 0.1s;">Continuous learning &amp; professional development</p>
 
         <div class="cert-grid stagger-center">
-            <div class="cert-card" onclick="showDemoPopup()">
-                <span class="click-label"><i class="fas fa-arrow-right"></i> View</span>
+            <div class="cert-card">
                 <div class="cert-icon">📜</div>
-                <div class="cert-name">Adobe Certified Professional</div>
-                <div class="cert-issuer">Adobe — 2024</div>
+                <div class="cert-name">Virtual Assistant Certification</div>
+                <div class="cert-issuer">Virtual Assistant Academy — 2024</div>
             </div>
-            <div class="cert-card" onclick="showDemoPopup()">
-                <span class="click-label"><i class="fas fa-arrow-right"></i> View</span>
-                <div class="cert-icon">🎯</div>
-                <div class="cert-name">UI/UX Design Fundamentals</div>
+            <div class="cert-card">
+                <div class="cert-icon">📊</div>
+                <div class="cert-name">Project Management Fundamentals</div>
                 <div class="cert-issuer">Google — 2023</div>
             </div>
-            <div class="cert-card" onclick="showDemoPopup()">
-                <span class="click-label"><i class="fas fa-arrow-right"></i> View</span>
-                <div class="cert-icon">🎨</div>
-                <div class="cert-name">Brand Strategy &amp; Identity</div>
+            <div class="cert-card">
+                <div class="cert-icon">📁</div>
+                <div class="cert-name">Document Management Specialist</div>
                 <div class="cert-issuer">Coursera — 2023</div>
             </div>
-            <div class="cert-card" onclick="showDemoPopup()">
-                <span class="click-label"><i class="fas fa-arrow-right"></i> View</span>
-                <div class="cert-icon">📱</div>
-                <div class="cert-name">Figma Masterclass</div>
-                <div class="cert-issuer">DesignLab — 2022</div>
+            <div class="cert-card">
+                <div class="cert-icon">🤖</div>
+                <div class="cert-name">AI Tools for Administrative Professionals</div>
+                <div class="cert-issuer">LinkedIn Learning — 2024</div>
             </div>
         </div>
     </section>
 
-    <!-- ===== DIVIDER 6 ===== -->
+    <!-- ===== DIVIDER 7 ===== -->
     <div class="section-divider">
         <div class="divider-line"></div>
     </div>
@@ -2372,13 +2240,13 @@
     <!-- ===== CONTACT SECTION ===== -->
     <section id="contact">
         <h2 class="section-title slide-center-up">Get In Touch</h2>
-        <p class="section-sub slide-center-up" style="transition-delay: 0.1s;">Let's build something great together</p>
+        <p class="section-sub slide-center-up" style="transition-delay: 0.1s;">Let's work together</p>
 
         <div class="contact-wrapper">
             <div class="contact-info">
                 <h3 class="slide-center">Let's talk!</h3>
                 <p class="slide-center" style="transition-delay: 0.1s;">
-                    I'm always open to new opportunities, creative collaborations, or just a conversation about design and ideas. If you're looking for a designer who brings both <strong>creativity and structure</strong> to every project, I'd love to hear from you. Whether it's a full-time role, a freelance project, or a creative partnership — let's explore how I can contribute to your team.
+                    I'm always open to new opportunities, collaborations, or just a conversation about how I can support your business. Whether you need a <strong>virtual assistant</strong>, <strong>administrative support</strong>, or someone to help keep your operations running smoothly — I'd love to hear from you.
                 </p>
 
                 <p class="slide-center" style="transition-delay: 0.15s; color: #c0c0e0; font-size: 1rem; margin-top: -10px; margin-bottom: 20px;">
@@ -2402,14 +2270,14 @@
 
                 <div class="contact-item slide-center" style="transition-delay: 0.35s;">
                     <div class="icon">🌐</div>
-                    <span><a href="#" target="_blank">alexa-designs.com</a></span>
+                    <span><a href="#" target="_blank">alexa-admin.com</a></span>
                 </div>
             </div>
 
             <div class="connect-sidebar slide-center-right">
                 <div class="connect-title">Let's <span class="gold">Connect</span></div>
                 <div class="connect-desc">
-                    I'm currently exploring new opportunities where I can grow, contribute, and make a real impact. If you have a project, a role, or just a great idea — I'm all ears. Let's create something meaningful together.
+                    I'm currently available for virtual assistant and administrative support roles. If you need someone reliable, organized, and proactive — let's talk. I'm all ears.
                 </div>
 
                 <div class="social-links">
@@ -2420,13 +2288,13 @@
                     <a href="#" target="_blank" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
                 </div>
 
-                <a href="mailto:alexa.reyes.design@gmail.com" class="btn-connect">
+                <a href="mailto:airavp14@gmail.com" class="btn-connect">
                     <i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Reach Out Now
                 </a>
 
                 <div class="availability">
                     <span class="dot"></span>
-                    <span>Open to opportunities</span>
+                    <span>Available for work</span>
                 </div>
             </div>
         </div>
@@ -2435,7 +2303,7 @@
     <!-- ===== FOOTER ===== -->
     <footer class="slide-center-up">
         <div class="quote">
-            "Design is not just what it looks like — it's how it works."
+            "Good administration is the foundation of great execution."
             <span>— Alexa Reyes</span>
         </div>
         <p>© 2026 <a href="#home">Alexa Reyes</a>. All rights reserved.</p>
@@ -2454,16 +2322,6 @@
         <div class="counter" id="imageCounter">1 / 3</div>
         <div class="progress-dots" id="progressDots"></div>
         <div class="thumbnails" id="thumbnails"></div>
-    </div>
-
-    <!-- ===== DEMO POPUP ===== -->
-    <div class="demo-popup" id="demoPopup" onclick="closeDemoPopup(event)">
-        <div class="demo-popup-content" onclick="event.stopPropagation()">
-            <div class="popup-icon">🔗</div>
-            <h3>Demo Only</h3>
-            <p>This is a demo link for portfolio purposes only. The actual link is not active in this version.</p>
-            <button class="popup-btn" onclick="closeDemoPopup()">Got it!</button>
-        </div>
     </div>
 
     <!-- ===== JAVASCRIPT ===== -->
@@ -2585,37 +2443,16 @@
 
         // ===== GALLERY DATA =====
         const galleryData = {
-            socialMedia: [
-                { src: './images/design1.png', alt: 'Social Media Campaign - Post 1' },
-                { src: './images/design2.png', alt: 'Social Media Campaign - Post 2' }
-            ],
-            uiDesign: [
-                { src: './images/demo1.jpg', alt: 'UI Design - Dashboard' },
-                { src: './images/Demo2.jpg', alt: 'UI Design - Mobile App' }
-            ]
+            // Keep existing gallery data if needed
         };
-
-        // ===== UPDATE PHOTO COUNTS =====
-        document.addEventListener('DOMContentLoaded', function() {
-            const socialHint = document.getElementById('socialMedia-hint');
-            if (socialHint) {
-                const countSpan = socialHint.querySelector('.photo-count');
-                if (countSpan) countSpan.textContent = galleryData.socialMedia.length;
-            }
-
-            const uiHint = document.getElementById('uiDesign-hint');
-            if (uiHint) {
-                const countSpan = uiHint.querySelector('.photo-count');
-                if (countSpan) countSpan.textContent = galleryData.uiDesign.length;
-            }
-        });
 
         let currentGallery = [];
         let currentImageIndex = 0;
 
         function openGallery(galleryName) {
             const modal = document.getElementById('galleryModal');
-            currentGallery = galleryData[galleryName] || galleryData.socialMedia;
+            currentGallery = galleryData[galleryName] || [];
+            if (currentGallery.length === 0) return;
             currentImageIndex = 0;
             modal.classList.add('active');
             updateGallery();
@@ -2647,6 +2484,8 @@
             const counter = document.getElementById('imageCounter');
             const thumbnails = document.getElementById('thumbnails');
             const dots = document.getElementById('progressDots');
+
+            if (currentGallery.length === 0) return;
 
             img.style.opacity = '0';
             setTimeout(() => {
@@ -2686,23 +2525,6 @@
             if (e.target === this) closeGallery();
         });
 
-        // ===== DEMO POPUP =====
-        function showDemoPopup() {
-            document.getElementById('demoPopup').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeDemoPopup(e) {
-            document.getElementById('demoPopup').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeDemoPopup();
-            }
-        });
-
         // ===== AIRPLANE CURSOR =====
         const airplaneCursor = document.getElementById('airplaneCursor');
         const trailContainer = document.getElementById('trailContainer');
@@ -2716,7 +2538,7 @@
                 createTrail(mouseX, mouseY);
             });
 
-            document.querySelectorAll('a, button, .btn, .project-card, .skill-card, .stat, .contact-item, .logo, .exp-card, .cert-card, .stat-visual-card, .close-btn, .nav-btn, .popup-btn, .demo-popup-content, .gallery-modal').forEach(el => {
+            document.querySelectorAll('a, button, .btn, .project-card, .skill-card, .stat, .contact-item, .logo, .exp-card, .cert-card, .stat-visual-card, .close-btn, .nav-btn').forEach(el => {
                 if (el) {
                     el.addEventListener('mouseenter', function() {
                         airplaneCursor.classList.add('hover');
@@ -2784,7 +2606,7 @@
             }
         });
 
-        // ===== SCROLL ANIMATIONS (matching Paul David portfolio) =====
+        // ===== SCROLL ANIMATIONS =====
         document.addEventListener('DOMContentLoaded', function() {
             const animatedElements = document.querySelectorAll(
                 '.slide-center, .slide-center-right, .slide-center-up, .stagger-center'
@@ -2808,7 +2630,7 @@
                 observer.observe(element);
             });
 
-            const staggerItems = document.querySelectorAll('.stagger-center .stat, .stagger-center .skill-card, .stagger-center .project-card, .stagger-center .exp-card, .stagger-center .cert-card, .stagger-center .stat-visual-card');
+            const staggerItems = document.querySelectorAll('.stagger-center .stat, .stagger-center .skill-card, .stagger-center .project-card, .stagger-center .exp-card, .stagger-center .cert-card, .stagger-center .stat-visual-card, .stagger-center .service-card');
             const itemObserver = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
@@ -2842,7 +2664,6 @@
                 skillObserver.observe(card);
             });
 
-            // Also handle stat-visual-card bars
             const statCards = document.querySelectorAll('.stat-visual-card');
             const statObserver = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
