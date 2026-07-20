@@ -76,9 +76,13 @@
             background: url('./images/virtual.png') center center / cover no-repeat;
         }
 
-        /* No overlay - image is fully visible */
+        /* Light overlay so text is readable but image shows through */
         .hero-bg::after {
-            content: none;
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(240, 235, 227, 0.7);
+            z-index: 0;
         }
 
         .hero-centered {
@@ -684,15 +688,11 @@
         }
 
         /* About section - remove extra top space */
-        #about .text-center {
-            margin-bottom: 0 !important;
-            padding-top: 0 !important;
+        #about .text-center.mb-14 {
+            margin-bottom: 1.5rem !important;
         }
-        #about .text-center h2 {
+        #about .text-center .section-title {
             margin-top: 0 !important;
-        }
-        #about .text-center p {
-            margin-top: 0.5rem !important;
         }
 
         /* Body background with subtle pattern/color */
@@ -834,7 +834,7 @@
         <a href="#contact" class="mt-2 btn-primary text-white px-4 py-2 rounded-full text-center">Hire Me</a>
     </div>
 
-    <!-- Hero Section with virtual.png as background (no overlay) -->
+    <!-- Hero Section with virtual.png as background -->
     <section id="home" class="hero-bg">
         <div class="hero-centered">
             <div class="badge">📋 Virtual Assistant · Admin Professional</div>
@@ -852,6 +852,7 @@
             </div>
             <div class="stats">
                 <span>✓ 4+ Years Experience</span>
+                <span>✓ 50+ Projects</span>
                 <span>✓ 100% Remote</span>
             </div>
         </div>
@@ -876,12 +877,12 @@
         </div>
     </section>
 
-    <!-- About Section - margin top removed -->
+    <!-- About Section -->
     <section id="about" class="py-16">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center">
+            <div class="text-center mb-6">
                 <h2 class="text-3xl md:text-4xl text-[#1a1414]">Hi, I'm <span class="text-[#cc6a6a]">Alexa</span> <span class="text-[#b55050]">Reyes</span></h2>
-                <p class="text-[#3d3333] max-w-2xl mx-auto mt-1">A Virtual Assistant and Admin Professional ready to contribute, organize, and grow with your team.</p>
+                <p class="text-[#3d3333] max-w-2xl mx-auto mt-2">A Virtual Assistant and Admin Professional ready to contribute, organize, and grow with your team.</p>
             </div>
             <div class="about-grid">
                 <div>
@@ -1327,9 +1328,8 @@
         console.log('✅ Navbar permanently fixed');
         console.log('✅ Default browser scrollbar');
         console.log('✅ Soft Beige/Sand color scheme applied');
-        console.log('✅ virtual.png background fully visible (no overlay)');
-        console.log('✅ Removed "50+ Projects" from stats');
-        console.log('✅ Removed margin top from About section');
+        console.log('✅ virtual.png background added to hero section');
+        console.log('✅ All sections now have glass/transparent effect');
     </script>
 
 </body>
