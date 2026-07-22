@@ -14,8 +14,8 @@
         }
 
         :root {
-            --bg-body: #121010;
-            --bg-card: rgba(55, 45, 45, 0.65);
+            --bg-body: #121010;        /* slightly lighter than #0a0808 */
+            --bg-card: rgba(55, 45, 45, 0.65);   /* lighter, more transparent */
             --bg-soft: rgba(45, 38, 38, 0.5);
             --bg-elevated: rgba(60, 50, 50, 0.45);
             --border-light: rgba(180, 150, 150, 0.2);
@@ -80,7 +80,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.45);
+            background: rgba(0, 0, 0, 0.45);  /* lighter overlay */
             z-index: 0;
         }
 
@@ -495,7 +495,6 @@
             color: var(--text-secondary);
         }
 
-        /* ===== INTRO SECTION - OVERLAY EFFECT (like hero) ===== */
         .intro-section {
             position: relative;
             z-index: 2;
@@ -514,52 +513,6 @@
             transition: none;
             border-top: 1px solid rgba(180, 150, 150, 0.15);
         }
-
-        /* ===== ALL SECTIONS WITH GLASS EFFECT ===== */
-        #about,
-        #services,
-        #tools,
-        #portfolio,
-        #contact {
-            background: rgba(18, 16, 16, 0.3) !important;
-            backdrop-filter: blur(6px) !important;
-            -webkit-backdrop-filter: blur(6px) !important;
-            border-top: 1px solid rgba(180, 150, 150, 0.1);
-            border-bottom: 1px solid rgba(180, 150, 150, 0.1);
-            position: relative;
-        }
-
-        /* ===== REVERSE OVERLAY EFFECT ===== */
-        /* Tools covers Portfolio */
-        #portfolio {
-            margin-top: -100px;
-            z-index: 1;
-            padding-top: 120px !important;
-        }
-
-        /* Portfolio covers Contact */
-        #contact {
-            margin-top: -100px;
-            z-index: 1;
-            padding-top: 120px !important;
-        }
-
-        /* Make sure Tools stays above Portfolio */
-        #tools {
-            z-index: 3;
-            position: relative;
-        }
-
-        #portfolio {
-            z-index: 2;
-            position: relative;
-        }
-
-        #contact {
-            z-index: 1;
-            position: relative;
-        }
-
         .intro-section .intro-inner {
             max-width: 1100px;
             margin: 0 auto;
@@ -724,6 +677,15 @@
             display: flex;
         }
 
+        /* ===== ALL SECTIONS WITH GLASS EFFECT ===== */
+        section:not(#home) {
+            background: rgba(18, 16, 16, 0.3) !important;
+            backdrop-filter: blur(6px) !important;
+            -webkit-backdrop-filter: blur(6px) !important;
+            border-top: 1px solid rgba(180, 150, 150, 0.1);
+            border-bottom: 1px solid rgba(180, 150, 150, 0.1);
+        }
+
         /* About section - remove extra top space */
         #about .text-center.mb-14 {
             margin-bottom: 1.5rem !important;
@@ -796,27 +758,15 @@
             #mobile-menu {
                 padding: 1rem 1.5rem;
             }
-            #portfolio {
-                margin-top: -60px !important;
-                padding-top: 80px !important;
-            }
-            #contact {
-                margin-top: -60px !important;
-                padding-top: 80px !important;
+            section:not(#home) {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
             }
         }
 
         @media (max-width: 480px) {
             .hero-centered h1 {
                 font-size: 2.2rem;
-            }
-            #portfolio {
-                margin-top: -40px !important;
-                padding-top: 60px !important;
-            }
-            #contact {
-                margin-top: -40px !important;
-                padding-top: 60px !important;
             }
         }
     </style>
@@ -844,10 +794,12 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8 h-full">
             <div class="nav-container">
                 <div class="nav-left">
-                    <span class="text-2xl font-bold">
-                        <span class="text-[#e88282]">ALEXA</span>
-                        <span class="text-[#cc6262]">R.</span>
-                    </span>
+              <div class="nav-left">
+    <span class="text-2xl font-bold">
+        <span class="text-[#e88282]">ALEXA</span>
+        <span class="text-[#cc6262]">R.</span>
+    </span>
+</div>
                 </div>
                 <div class="nav-center">
                     <a href="#home" class="active">Home</a>
@@ -1106,7 +1058,7 @@
         </div>
     </section>
 
-    <!-- Portfolio Section - REVERSE OVERLAY EFFECT (covered by Tools) -->
+    <!-- Portfolio Section -->
     <section id="portfolio" class="py-16">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -1136,7 +1088,7 @@
         </div>
     </section>
 
-    <!-- Contact Section - REVERSE OVERLAY EFFECT (covered by Portfolio) -->
+    <!-- Contact Section -->
     <section id="contact" class="py-16">
         <div class="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
@@ -1379,10 +1331,19 @@
         console.log('✅ Lenis smooth scroll initialized (perfect balance mode)');
         console.log('✅ Navbar permanently fixed');
         console.log('✅ Default browser scrollbar');
-        console.log('✅ Dark theme with rose accents');
-        console.log('✅ Reverse overlay effect: Tools covers Portfolio, Portfolio covers Contact');
-        console.log('✅ Use z-index layering for proper overlap');
+        console.log('✅ Dark theme with rose accents (lighter brown)');
+        console.log('✅ virtual.png background added to hero section');
+        console.log('✅ All sections now have glass/transparent effect');
     </script>
 
 </body>
 </html>
+
+
+can you just extend the lenis scroll only into Intro
+About
+Services
+Tools
+only and when itcomes to 
+Portfolio
+Contact
