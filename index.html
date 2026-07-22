@@ -14,8 +14,8 @@
         }
 
         :root {
-            --bg-body: #121010;        /* slightly lighter than #0a0808 */
-            --bg-card: rgba(55, 45, 45, 0.65);   /* lighter, more transparent */
+            --bg-body: #121010;
+            --bg-card: rgba(55, 45, 45, 0.65);
             --bg-soft: rgba(45, 38, 38, 0.5);
             --bg-elevated: rgba(60, 50, 50, 0.45);
             --border-light: rgba(180, 150, 150, 0.2);
@@ -80,7 +80,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.45);  /* lighter overlay */
+            background: rgba(0, 0, 0, 0.45);
             z-index: 0;
         }
 
@@ -678,6 +678,7 @@
         }
 
         /* ===== ALL SECTIONS WITH GLASS EFFECT ===== */
+        /* All sections except hero have glass effect */
         section:not(#home) {
             background: rgba(18, 16, 16, 0.3) !important;
             backdrop-filter: blur(6px) !important;
@@ -794,12 +795,10 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8 h-full">
             <div class="nav-container">
                 <div class="nav-left">
-              <div class="nav-left">
-    <span class="text-2xl font-bold">
-        <span class="text-[#e88282]">ALEXA</span>
-        <span class="text-[#cc6262]">R.</span>
-    </span>
-</div>
+                    <span class="text-2xl font-bold">
+                        <span class="text-[#e88282]">ALEXA</span>
+                        <span class="text-[#cc6262]">R.</span>
+                    </span>
                 </div>
                 <div class="nav-center">
                     <a href="#home" class="active">Home</a>
