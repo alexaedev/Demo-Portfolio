@@ -515,50 +515,49 @@
             border-top: 1px solid rgba(180, 150, 150, 0.15);
         }
 
-        /* ===== PORTFOLIO & CONTACT - REVERSE OVERLAY EFFECT ===== */
-        #portfolio {
-            position: relative;
-            z-index: 1;
-            padding: 80px 30px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: rgba(18, 16, 16, 0.3);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-            border-top: 1px solid rgba(180, 150, 150, 0.1);
-            border-bottom: 1px solid rgba(180, 150, 150, 0.1);
-            margin-top: -80px;
-            /* This creates the overlap effect */
-        }
-
-        #contact {
-            position: relative;
-            z-index: 1;
-            padding: 80px 30px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: rgba(18, 16, 16, 0.3);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-            border-top: 1px solid rgba(180, 150, 150, 0.1);
-            border-bottom: 1px solid rgba(180, 150, 150, 0.1);
-            margin-top: -80px;
-            /* This creates the overlap effect */
-        }
-
-        /* All other sections with glass effect */
+        /* ===== ALL SECTIONS WITH GLASS EFFECT ===== */
         #about,
         #services,
-        #tools {
+        #tools,
+        #portfolio,
+        #contact {
             background: rgba(18, 16, 16, 0.3) !important;
             backdrop-filter: blur(6px) !important;
             -webkit-backdrop-filter: blur(6px) !important;
             border-top: 1px solid rgba(180, 150, 150, 0.1);
             border-bottom: 1px solid rgba(180, 150, 150, 0.1);
+            position: relative;
+        }
+
+        /* ===== REVERSE OVERLAY EFFECT ===== */
+        /* Tools covers Portfolio */
+        #portfolio {
+            margin-top: -100px;
+            z-index: 1;
+            padding-top: 120px !important;
+        }
+
+        /* Portfolio covers Contact */
+        #contact {
+            margin-top: -100px;
+            z-index: 1;
+            padding-top: 120px !important;
+        }
+
+        /* Make sure Tools stays above Portfolio */
+        #tools {
+            z-index: 3;
+            position: relative;
+        }
+
+        #portfolio {
+            z-index: 2;
+            position: relative;
+        }
+
+        #contact {
+            z-index: 1;
+            position: relative;
         }
 
         .intro-section .intro-inner {
@@ -797,10 +796,13 @@
             #mobile-menu {
                 padding: 1rem 1.5rem;
             }
-            #portfolio,
+            #portfolio {
+                margin-top: -60px !important;
+                padding-top: 80px !important;
+            }
             #contact {
-                margin-top: -40px !important;
-                padding: 60px 20px !important;
+                margin-top: -60px !important;
+                padding-top: 80px !important;
             }
         }
 
@@ -808,10 +810,13 @@
             .hero-centered h1 {
                 font-size: 2.2rem;
             }
-            #portfolio,
+            #portfolio {
+                margin-top: -40px !important;
+                padding-top: 60px !important;
+            }
             #contact {
-                margin-top: -20px !important;
-                padding: 40px 15px !important;
+                margin-top: -40px !important;
+                padding-top: 60px !important;
             }
         }
     </style>
@@ -1101,7 +1106,7 @@
         </div>
     </section>
 
-    <!-- Portfolio Section - REVERSE OVERLAY EFFECT -->
+    <!-- Portfolio Section - REVERSE OVERLAY EFFECT (covered by Tools) -->
     <section id="portfolio" class="py-16">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -1131,7 +1136,7 @@
         </div>
     </section>
 
-    <!-- Contact Section - REVERSE OVERLAY EFFECT -->
+    <!-- Contact Section - REVERSE OVERLAY EFFECT (covered by Portfolio) -->
     <section id="contact" class="py-16">
         <div class="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
@@ -1375,8 +1380,8 @@
         console.log('✅ Navbar permanently fixed');
         console.log('✅ Default browser scrollbar');
         console.log('✅ Dark theme with rose accents');
-        console.log('✅ Reverse overlay effect: Portfolio & Contact are covered by Tools');
-        console.log('✅ Scrolling reveals Portfolio & Contact gradually');
+        console.log('✅ Reverse overlay effect: Tools covers Portfolio, Portfolio covers Contact');
+        console.log('✅ Use z-index layering for proper overlap');
     </script>
 
 </body>
