@@ -14,8 +14,8 @@
         }
 
         :root {
-            --bg-body: #121010;        /* slightly lighter than #0a0808 */
-            --bg-card: rgba(55, 45, 45, 0.65);   /* lighter, more transparent */
+            --bg-body: #121010;
+            --bg-card: rgba(55, 45, 45, 0.65);
             --bg-soft: rgba(45, 38, 38, 0.5);
             --bg-elevated: rgba(60, 50, 50, 0.45);
             --border-light: rgba(180, 150, 150, 0.2);
@@ -37,7 +37,6 @@
             overflow-x: hidden;
         }
 
-        /* Lenis smooth scroll styles */
         html.lenis {
             height: auto;
         }
@@ -51,20 +50,42 @@
             overflow: hidden;
         }
 
-        .bg-body { background-color: var(--bg-body); }
-        .bg-card { background-color: var(--bg-card); }
-        .bg-soft { background-color: var(--bg-soft); }
-        .bg-elevated { background-color: var(--bg-elevated); }
-        .border-soft { border-color: var(--border-light); }
-        .text-secondary { color: var(--text-secondary); }
-        .text-muted { color: var(--text-muted); }
+        .bg-body {
+            background-color: var(--bg-body);
+        }
+        .bg-card {
+            background-color: var(--bg-card);
+        }
+        .bg-soft {
+            background-color: var(--bg-soft);
+        }
+        .bg-elevated {
+            background-color: var(--bg-elevated);
+        }
+        .border-soft {
+            border-color: var(--border-light);
+        }
+        .text-secondary {
+            color: var(--text-secondary);
+        }
+        .text-muted {
+            color: var(--text-muted);
+        }
 
-        .accent-primary { color: var(--accent-primary); }
-        .accent-secondary { color: var(--accent-secondary); }
-        .bg-accent-primary { background-color: var(--accent-primary); }
-        .bg-accent-secondary { background-color: var(--accent-secondary); }
+        .accent-primary {
+            color: var(--accent-primary);
+        }
+        .accent-secondary {
+            color: var(--accent-secondary);
+        }
+        .bg-accent-primary {
+            background-color: var(--accent-primary);
+        }
+        .bg-accent-secondary {
+            background-color: var(--accent-secondary);
+        }
 
-        /* ===== HERO SECTION WITH BACKGROUND IMAGE ===== */
+        /* ===== HERO SECTION ===== */
         .hero-bg {
             position: relative;
             z-index: 1;
@@ -80,7 +101,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.45);  /* lighter overlay */
+            background: rgba(0, 0, 0, 0.45);
             z-index: 0;
         }
 
@@ -495,6 +516,7 @@
             color: var(--text-secondary);
         }
 
+        /* ===== INTRO SECTION - Stays in place, no transform ===== */
         .intro-section {
             position: relative;
             z-index: 2;
@@ -507,10 +529,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            box-shadow: 0 -20px 60px rgba(0,0,0,0.15);
-            will-change: transform;
-            transform: translateY(0);
-            transition: none;
+            box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.15);
             border-top: 1px solid rgba(180, 150, 150, 0.15);
         }
         .intro-section .intro-inner {
@@ -561,6 +580,33 @@
             max-width: 400px;
             height: auto;
             aspect-ratio: 4/5;
+        }
+
+        /* ===== SECTIONS WITH SCROLL EFFECTS ===== */
+        /* About, Services, Tools - slide UP */
+        .section-slide-up {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+                transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            will-change: opacity, transform;
+        }
+        .section-slide-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Portfolio, Contact - slide DOWN */
+        .section-slide-down {
+            opacity: 0;
+            transform: translateY(-60px);
+            transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+                transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            will-change: opacity, transform;
+        }
+        .section-slide-down.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* ===== NAVBAR ===== */
@@ -686,7 +732,6 @@
             border-bottom: 1px solid rgba(180, 150, 150, 0.1);
         }
 
-        /* About section - remove extra top space */
         #about .text-center.mb-14 {
             margin-bottom: 1.5rem !important;
         }
@@ -694,12 +739,11 @@
             margin-top: 0 !important;
         }
 
-        /* Body background with subtle pattern/color */
         body::before {
             content: '';
             position: fixed;
             inset: 0;
-            background: 
+            background:
                 radial-gradient(ellipse at 20% 50%, rgba(232, 130, 130, 0.05) 0%, transparent 60%),
                 radial-gradient(ellipse at 80% 50%, rgba(204, 98, 98, 0.05) 0%, transparent 60%),
                 radial-gradient(ellipse at 50% 100%, rgba(232, 130, 130, 0.03) 0%, transparent 50%);
@@ -744,7 +788,6 @@
             .intro-section {
                 margin-top: -20px;
                 border-radius: 20px 20px 0 0;
-                transform: translateY(0);
             }
             .intro-photo .photo-frame {
                 max-width: 280px;
@@ -833,7 +876,7 @@
         <a href="#contact" class="mt-2 btn-primary text-white px-4 py-2 rounded-full text-center">Hire Me</a>
     </div>
 
-    <!-- Hero Section with virtual.png as background -->
+    <!-- Hero Section -->
     <section id="home" class="hero-bg">
         <div class="hero-centered">
             <div class="badge">📋 Virtual Assistant · Admin Professional</div>
@@ -857,7 +900,7 @@
         </div>
     </section>
 
-    <!-- Intro Section -->
+    <!-- Intro Section (no scroll animation) -->
     <section id="intro" class="intro-section">
         <div class="intro-inner">
             <div class="label">01 — meet Alexa</div>
@@ -876,8 +919,8 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-16">
+    <!-- About Section (slide UP) -->
+    <section id="about" class="py-16 section-slide-up">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-6">
                 <h2 class="text-3xl md:text-4xl text-[#f2ece8]">Hi, I'm <span class="text-[#e88282]">Alexa</span> <span class="text-[#cc6262]">Reyes</span></h2>
@@ -886,14 +929,14 @@
             <div class="about-grid">
                 <div>
                     <p class="text-[#d4c8c0] mb-4">
-                        I'm a <strong class="text-[#f2ece8]">Virtual Assistant and Administrative Professional</strong> 
-                        with a passion for helping businesses stay organized and efficient. With experience in 
-                        <strong class="text-[#e88282]">executive support, operations management, and project coordination</strong>, 
+                        I'm a <strong class="text-[#f2ece8]">Virtual Assistant and Administrative Professional</strong>
+                        with a passion for helping businesses stay organized and efficient. With experience in
+                        <strong class="text-[#e88282]">executive support, operations management, and project coordination</strong>,
                         I provide seamless administrative solutions that keep teams running smoothly.
                     </p>
                     <p class="text-[#d4c8c0]">
-                        Beyond task management, I bring a <strong class="text-[#cc6262]">proactive mindset</strong> 
-                        and a commitment to excellence. I believe that good administration is the foundation of great execution — 
+                        Beyond task management, I bring a <strong class="text-[#cc6262]">proactive mindset</strong>
+                        and a commitment to excellence. I believe that good administration is the foundation of great execution —
                         and I'm building my career around that principle.
                     </p>
                     <div class="traits">
@@ -925,8 +968,8 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-16">
+    <!-- Services Section (slide UP) -->
+    <section id="services" class="py-16 section-slide-up">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl text-[#f2ece8]">My <span class="text-[#e88282]">Services</span></h2>
@@ -1001,8 +1044,8 @@
         </div>
     </section>
 
-    <!-- Tools Section -->
-    <section id="tools" class="py-16">
+    <!-- Tools Section (slide UP) -->
+    <section id="tools" class="py-16 section-slide-up">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl text-[#f2ece8]">I Already Know <span class="text-[#e88282]">The Tools</span> <span class="text-[#cc6262]">You Use</span></h2>
@@ -1053,8 +1096,8 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-16">
+    <!-- Portfolio Section (slide DOWN) -->
+    <section id="portfolio" class="py-16 section-slide-down">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl text-[#f2ece8]">See What <span class="text-[#e88282]">I've Done</span></h2>
@@ -1083,8 +1126,8 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16">
+    <!-- Contact Section (slide DOWN) -->
+    <section id="contact" class="py-16 section-slide-down">
         <div class="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
                 <h2 class="text-3xl text-[#f2ece8]">Get in <span class="text-[#e88282]">Touch</span></h2>
@@ -1182,11 +1225,11 @@
 
     <script>
         // =============================================
-        // LENIS SMOOTH SCROLL - PERFECT BALANCE
+        // LENIS SMOOTH SCROLL
         // =============================================
 
         const lenis = new Lenis({
-            duration: 0.6,
+            duration: 0.8,
             easing: (t) => {
                 return 1 - Math.pow(1 - t, 1.8);
             },
@@ -1203,6 +1246,7 @@
 
         lenis.on('scroll', (e) => {
             updateUI(e);
+            checkVisibility();
         });
 
         function raf(time) {
@@ -1222,25 +1266,14 @@
         const dots = document.querySelectorAll('.scroll-dot');
         const navLinks = document.querySelectorAll('.nav-center a');
         const nav = document.querySelector('nav');
-        const intro = document.querySelector('.intro-section');
 
         function updateUI(e) {
             const scrollY = e.animatedScroll || window.pageYOffset || window.scrollY;
-            const windowHeight = window.innerHeight;
-
-            if (intro) {
-                const maxScroll = windowHeight * 1.0;
-                const progress = Math.min(scrollY / maxScroll, 1);
-                const easeOut = 1 - Math.pow(1 - progress, 1.5);
-                const maxTranslate = -120;
-                const translateY = maxTranslate * easeOut;
-                intro.style.transform = `translateY(${translateY}px)`;
-            }
 
             let activeIndex = 0;
             sections.forEach((section, i) => {
                 const rect = section.getBoundingClientRect();
-                if (rect.top < windowHeight / 2) {
+                if (rect.top < window.innerHeight / 2) {
                     activeIndex = i;
                 }
             });
@@ -1259,6 +1292,33 @@
         }
 
         // =============================================
+        // SCROLL VISIBILITY - Trigger animations
+        // =============================================
+
+        function checkVisibility() {
+            const slideUpSections = document.querySelectorAll('.section-slide-up');
+            const slideDownSections = document.querySelectorAll('.section-slide-down');
+
+            slideUpSections.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                // Trigger when section enters viewport (bottom edge crosses viewport top)
+                if (rect.top < windowHeight * 0.85 && rect.bottom > 0) {
+                    section.classList.add('visible');
+                }
+            });
+
+            slideDownSections.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                // Trigger when section enters viewport from top
+                if (rect.top < windowHeight * 0.85 && rect.bottom > 0) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+
+        // =============================================
         // NAVIGATION
         // =============================================
 
@@ -1268,7 +1328,7 @@
                 const offset = 80;
                 lenis.scrollTo(target, {
                     offset: -offset,
-                    duration: 0.6,
+                    duration: 0.8,
                     easing: (t) => 1 - Math.pow(1 - t, 1.8),
                 });
             }
@@ -1288,7 +1348,7 @@
                     const offset = 80;
                     lenis.scrollTo(target, {
                         offset: -offset,
-                        duration: 0.6,
+                        duration: 0.8,
                         easing: (t) => 1 - Math.pow(1 - t, 1.8),
                     });
                 }
@@ -1321,14 +1381,16 @@
 
         setTimeout(() => {
             updateUI({ animatedScroll: window.pageYOffset || window.scrollY });
-        }, 100);
+            checkVisibility();
+        }, 200);
 
-        console.log('✅ Lenis smooth scroll initialized (perfect balance mode)');
-        console.log('✅ Navbar permanently fixed');
-        console.log('✅ Default browser scrollbar');
-        console.log('✅ Dark theme with rose accents (lighter brown)');
-        console.log('✅ virtual.png background added to hero section');
-        console.log('✅ All sections now have glass/transparent effect');
+        // Re-check visibility on resize
+        window.addEventListener('resize', checkVisibility);
+
+        console.log('✅ Lenis smooth scroll initialized');
+        console.log('✅ About, Services, Tools - slide UP');
+        console.log('✅ Portfolio, Contact - slide DOWN');
+        console.log('✅ Hero and Intro - no animation');
     </script>
 
 </body>
