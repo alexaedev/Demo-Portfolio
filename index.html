@@ -13,20 +13,71 @@
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
         }
 
+        /* ===== DEFAULT THEME: Charcoal & Rose ===== */
         :root {
-            --bg-body: #121010;        /* slightly lighter than #0a0808 */
-            --bg-card: rgba(55, 45, 45, 0.65);   /* lighter, more transparent */
-            --bg-soft: rgba(45, 38, 38, 0.5);
-            --bg-elevated: rgba(60, 50, 50, 0.45);
-            --border-light: rgba(180, 150, 150, 0.2);
-            --text-primary: #f2ece8;
-            --text-secondary: #d4c8c0;
-            --text-muted: #a8928a;
-            --accent-primary: #e88282;
-            --accent-secondary: #cc6262;
+            --bg-body: #121010;
+            --bg-card: rgba(28, 24, 24, 0.65);
+            --bg-soft: rgba(22, 18, 18, 0.5);
+            --bg-elevated: rgba(42, 34, 34, 0.45);
+            --border-light: rgba(42, 34, 34, 0.3);
+            --text-primary: #f0eae6;
+            --text-secondary: #c8b8b0;
+            --text-muted: #7a6a6a;
+            --accent-primary: #e87a7a;
+            --accent-secondary: #c95a5a;
             --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.5);
             --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.65);
             --nav-height: 64px;
+            --badge-color: #e8c39e;
+            --badge-bg: rgba(0, 0, 0, 0.5);
+        }
+
+        /* ===== THEME 1: Dark Navy & Gold ===== */
+        [data-theme="navy"] {
+            --bg-body: #0a0e1a;
+            --bg-card: rgba(18, 24, 40, 0.65);
+            --bg-soft: rgba(15, 21, 34, 0.5);
+            --bg-elevated: rgba(30, 40, 64, 0.45);
+            --border-light: rgba(30, 40, 64, 0.3);
+            --text-primary: #f0e9d8;
+            --text-secondary: #c4bda8;
+            --text-muted: #7a7a8a;
+            --accent-primary: #d4a853;
+            --accent-secondary: #b8943e;
+            --badge-color: #d4a853;
+            --badge-bg: rgba(0, 0, 0, 0.5);
+        }
+
+        /* ===== THEME 2: Charcoal & Rose (Default) ===== */
+        [data-theme="rose"] {
+            --bg-body: #121010;
+            --bg-card: rgba(28, 24, 24, 0.65);
+            --bg-soft: rgba(22, 18, 18, 0.5);
+            --bg-elevated: rgba(42, 34, 34, 0.45);
+            --border-light: rgba(42, 34, 34, 0.3);
+            --text-primary: #f0eae6;
+            --text-secondary: #c8b8b0;
+            --text-muted: #7a6a6a;
+            --accent-primary: #e87a7a;
+            --accent-secondary: #c95a5a;
+            --badge-color: #e8c39e;
+            --badge-bg: rgba(0, 0, 0, 0.5);
+        }
+
+        /* ===== THEME 3: Warm Sand & Terracotta ===== */
+        [data-theme="sand"] {
+            --bg-body: #1a1612;
+            --bg-card: rgba(36, 30, 24, 0.65);
+            --bg-soft: rgba(30, 24, 20, 0.5);
+            --bg-elevated: rgba(50, 42, 34, 0.45);
+            --border-light: rgba(50, 42, 34, 0.3);
+            --text-primary: #f0e8d8;
+            --text-secondary: #c8b8a0;
+            --text-muted: #7a6e5a;
+            --accent-primary: #d4956a;
+            --accent-secondary: #b87a52;
+            --badge-color: #d4956a;
+            --badge-bg: rgba(0, 0, 0, 0.5);
         }
 
         body {
@@ -35,6 +86,7 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            transition: background-color 0.4s ease, color 0.4s ease;
         }
 
         /* Lenis smooth scroll styles */
@@ -64,6 +116,11 @@
         .bg-accent-primary { background-color: var(--accent-primary); }
         .bg-accent-secondary { background-color: var(--accent-secondary); }
 
+        /* ===== TRANSITION FOR ALL THEME SWITCHING ===== */
+        .theme-transition * {
+            transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
         /* ===== HERO SECTION WITH BACKGROUND IMAGE ===== */
         .hero-bg {
             position: relative;
@@ -80,7 +137,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.45);  /* lighter overlay */
+            background: rgba(0, 0, 0, 0.45);
             z-index: 0;
         }
 
@@ -126,10 +183,11 @@
             width: 380px;
             height: 480px;
             border-radius: 40% 40% 20% 20% / 50% 50% 20% 20%;
-            background: linear-gradient(135deg, #4a3030, rgba(61, 51, 51, 0.5));
+            background: linear-gradient(135deg, var(--bg-soft), var(--border-light));
             border: 2px solid rgba(232, 130, 130, 0.15);
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            transition: background 0.4s ease, border-color 0.4s ease;
         }
         .photo-frame img {
             width: 100%;
@@ -197,6 +255,7 @@
             gap: 0.5rem;
             color: var(--accent-secondary);
             border-color: var(--accent-secondary);
+            transition: color 0.4s ease, border-color 0.4s ease;
         }
 
         .tool-badge {
@@ -241,6 +300,7 @@
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--border-light);
             color: var(--text-muted);
+            transition: color 0.4s ease, border-color 0.4s ease;
         }
 
         .tools-grid {
@@ -285,6 +345,7 @@
             border-radius: 20px;
             padding: 2.5rem;
             box-shadow: var(--shadow-soft);
+            transition: background 0.4s ease, border-color 0.4s ease;
         }
         .about-card .usp {
             border-radius: 12px;
@@ -294,14 +355,15 @@
             border: 1px solid rgba(232, 130, 130, 0.15);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
+            transition: background 0.4s ease, border-color 0.4s ease;
         }
         .about-card .usp p {
             color: var(--text-primary);
         }
 
         .badge {
-            background: rgba(0, 0, 0, 0.5);
-            color: #e8c39e;
+            background: var(--badge-bg);
+            color: var(--badge-color);
             padding: 0.5rem 1.5rem;
             border-radius: 9999px;
             font-size: 0.8rem;
@@ -310,6 +372,7 @@
             display: inline-block;
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
+            transition: color 0.4s ease, background 0.4s ease, border-color 0.4s ease;
         }
 
         .skills-expanding {
@@ -321,6 +384,7 @@
             padding: 2.5rem;
             margin-top: 2.5rem;
             box-shadow: var(--shadow-soft);
+            transition: background 0.4s ease, border-color 0.4s ease;
         }
 
         .pill {
@@ -392,25 +456,29 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-top: 1px solid rgba(180, 150, 150, 0.15);
+            transition: background 0.4s ease, border-color 0.4s ease;
         }
         footer .quote {
             font-size: 1.1rem;
-            color: #a8928a;
+            color: var(--text-muted);
             font-style: italic;
             text-align: center;
             padding-top: 0.75rem;
             margin-bottom: 0;
+            transition: color 0.4s ease;
         }
         footer .quote span {
-            color: #e8c39e;
+            color: var(--badge-color);
+            transition: color 0.4s ease;
         }
         footer .copyright {
             text-align: center;
-            color: #7a6a6a;
+            color: var(--text-muted);
             font-size: 0.85rem;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
             padding-top: 20px;
             margin-top: 0;
+            transition: color 0.4s ease;
         }
 
         .floating-btn {
@@ -477,6 +545,7 @@
             color: var(--text-secondary);
             max-width: 600px;
             margin: 1.5rem auto 0;
+            transition: color 0.4s ease;
         }
         .hero-centered .buttons {
             display: flex;
@@ -493,6 +562,7 @@
             margin-top: 2rem;
             font-size: 0.95rem;
             color: var(--text-secondary);
+            transition: color 0.4s ease;
         }
 
         .intro-section {
@@ -512,6 +582,7 @@
             transform: translateY(0);
             transition: none;
             border-top: 1px solid rgba(180, 150, 150, 0.15);
+            transition: background 0.4s ease, border-color 0.4s ease;
         }
         .intro-section .intro-inner {
             max-width: 1100px;
@@ -525,6 +596,7 @@
             letter-spacing: 0.1em;
             color: var(--text-muted);
             margin-bottom: 1rem;
+            transition: color 0.4s ease;
         }
         .intro-section .intro-grid {
             display: grid;
@@ -544,6 +616,7 @@
             color: var(--text-secondary);
             line-height: 1.7;
             max-width: 600px;
+            transition: color 0.4s ease;
         }
         .intro-section .text:first-of-type {
             margin-top: 1.5rem;
@@ -573,9 +646,9 @@
             background: rgba(18, 16, 16, 0.85) !important;
             backdrop-filter: blur(16px) !important;
             -webkit-backdrop-filter: blur(16px) !important;
-            border-bottom: 1px solid rgba(180, 150, 150, 0.15) !important;
+            border-bottom: 1px solid var(--border-light) !important;
             height: var(--nav-height) !important;
-            transition: box-shadow 0.3s ease !important;
+            transition: box-shadow 0.3s ease, background 0.4s ease, border-color 0.4s ease !important;
             will-change: transform;
         }
         nav.scrolled {
@@ -649,6 +722,31 @@
             white-space: nowrap;
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
+            transition: color 0.4s ease, background 0.4s ease, border-color 0.4s ease;
+        }
+
+        /* ===== THEME TOGGLE BUTTON ===== */
+        .theme-toggle {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-light);
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.05) rotate(20deg);
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
         }
 
         .about-grid {
@@ -667,11 +765,12 @@
             background: rgba(18, 16, 16, 0.95);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(180, 150, 150, 0.15);
+            border-bottom: 1px solid var(--border-light);
             padding: 1.5rem 2rem;
             display: none;
             flex-direction: column;
             gap: 1rem;
+            transition: background 0.4s ease, border-color 0.4s ease;
         }
         #mobile-menu:not(.hidden) {
             display: flex;
@@ -684,6 +783,7 @@
             -webkit-backdrop-filter: blur(6px) !important;
             border-top: 1px solid rgba(180, 150, 150, 0.1);
             border-bottom: 1px solid rgba(180, 150, 150, 0.1);
+            transition: background 0.4s ease, border-color 0.4s ease;
         }
 
         /* About section - remove extra top space */
@@ -705,6 +805,7 @@
                 radial-gradient(ellipse at 50% 100%, rgba(232, 130, 130, 0.03) 0%, transparent 50%);
             z-index: 0;
             pointer-events: none;
+            transition: background 0.4s ease;
         }
 
         @media (max-width: 768px) {
@@ -762,6 +863,11 @@
                 padding-left: 1rem !important;
                 padding-right: 1rem !important;
             }
+            .theme-toggle {
+                width: 32px;
+                height: 32px;
+                font-size: 0.9rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -794,12 +900,10 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8 h-full">
             <div class="nav-container">
                 <div class="nav-left">
-              <div class="nav-left">
-    <span class="text-2xl font-bold">
-        <span class="text-[#e88282]">ALEXA</span>
-        <span class="text-[#cc6262]">R.</span>
-    </span>
-</div>
+                    <span class="text-2xl font-bold">
+                        <span class="text-[#e88282]">ALEXA</span>
+                        <span class="text-[#cc6262]">R.</span>
+                    </span>
                 </div>
                 <div class="nav-center">
                     <a href="#home" class="active">Home</a>
@@ -814,6 +918,10 @@
                     <span class="availability-badge hidden sm:inline-flex">
                         <span class="icon">✦</span> Available Worldwide · Remote
                     </span>
+                    <!-- Theme Toggle Button -->
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <i class="fas fa-lightbulb"></i>
+                    </button>
                     <button id="mobile-menu-btn" class="md:hidden p-2 rounded-full hover:bg-[#3d3333] transition">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -1140,12 +1248,7 @@
     <footer class="footer-bg text-gray-300 py-12">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-            <div class="nav-left">
-    <span class="text-2xl font-bold">
-        <span class="text-[#e88282]">ALEXA</span>
-        <span class="text-[#cc6262]">R.</span>
-    </span>
-</div>
+                <span class="text-2xl font-bold text-white">A<span class="text-[#cc6262]">R</span></span>
                 <p class="text-xs text-gray-400 mt-2">Virtual Assistant · Admin Professional</p>
             </div>
             <div>
@@ -1326,6 +1429,70 @@
         });
 
         // =============================================
+        // THEME TOGGLE - Lightbulb Button
+        // =============================================
+
+        const themes = ['rose', 'navy', 'sand'];
+        const themeNames = {
+            rose: 'Charcoal & Rose',
+            navy: 'Dark Navy & Gold',
+            sand: 'Warm Sand & Terracotta'
+        };
+        let currentThemeIndex = 0;
+
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+
+        // Apply theme
+        function applyTheme(themeName) {
+            htmlElement.setAttribute('data-theme', themeName);
+            // Update icon based on theme
+            const icon = themeToggle.querySelector('i');
+            if (themeName === 'rose') {
+                icon.className = 'fas fa-lightbulb';
+            } else if (themeName === 'navy') {
+                icon.className = 'fas fa-lightbulb';
+                icon.style.color = '#d4a853';
+            } else if (themeName === 'sand') {
+                icon.className = 'fas fa-lightbulb';
+                icon.style.color = '#d4956a';
+            }
+            // Reset color for rose
+            if (themeName === 'rose') {
+                icon.style.color = '';
+            }
+            localStorage.setItem('theme', themeName);
+            console.log('Theme changed to:', themeNames[themeName]);
+        }
+
+        // Get saved theme or default
+        function getSavedTheme() {
+            const saved = localStorage.getItem('theme');
+            if (saved && themes.includes(saved)) {
+                return saved;
+            }
+            return 'rose'; // default
+        }
+
+        // Toggle to next theme
+        function toggleTheme() {
+            const currentTheme = htmlElement.getAttribute('data-theme') || 'rose';
+            let index = themes.indexOf(currentTheme);
+            index = (index + 1) % themes.length;
+            const newTheme = themes[index];
+            applyTheme(newTheme);
+            currentThemeIndex = index;
+        }
+
+        // Initialize theme
+        const savedTheme = getSavedTheme();
+        applyTheme(savedTheme);
+        currentThemeIndex = themes.indexOf(savedTheme);
+
+        // Event listener for theme toggle
+        themeToggle.addEventListener('click', toggleTheme);
+
+        // =============================================
         // INITIAL UI UPDATE
         // =============================================
 
@@ -1336,9 +1503,8 @@
         console.log('✅ Lenis smooth scroll initialized (perfect balance mode)');
         console.log('✅ Navbar permanently fixed');
         console.log('✅ Default browser scrollbar');
-        console.log('✅ Dark theme with rose accents (lighter brown)');
-        console.log('✅ virtual.png background added to hero section');
-        console.log('✅ All sections now have glass/transparent effect');
+        console.log('✅ Theme toggle button added (lightbulb)');
+        console.log('✅ 3 themes: Charcoal & Rose, Dark Navy & Gold, Warm Sand & Terracotta');
     </script>
 
 </body>
